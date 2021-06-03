@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class Input extends React.Component{
 
@@ -8,8 +9,13 @@ class Input extends React.Component{
         event.preventDefault();
 
         this.setState({email: event.target.value});
-        console.log(this.state.email);
 
+        axios
+        .post('/email', this.state)
+        .then(() => console.log('email id sent'))
+        .catch(err => {
+          console.error(err);
+        });
     }
 
     render(){
