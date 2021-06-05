@@ -10,12 +10,19 @@ class Input extends React.Component{
 
         this.setState({email: event.target.value});
 
-        axios
-        .post('/email', this.state)
-        .then(() => console.log('email id sent'))
-        .catch(err => {
-          console.error(err);
-        });
+        var regx = /^([a-zA-Z0-9\._]+)@([a-zA-Z])+(.iitr.ac.in)/; //eslint-disable-line
+        if(this.state.email.match(regx))
+        {
+            axios
+            .post('/email', this.state)
+            .then(() => console.log('email id sent, an iitr student'))
+            .catch(err => {
+            console.error(err);
+            });
+        }
+        else{
+            console.log("Your are not an iitr student")
+        }
     }
 
     render(){
