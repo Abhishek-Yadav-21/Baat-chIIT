@@ -1,31 +1,30 @@
 const express = require('express');
+const socketio = require('socket.io');
+const http = require('http');
+const PORT = process.env.PORT || 5000;
 const app = express();
+const cors = require('cors');
+const server = http.createServer(app);
+// const io = socketio(server);
+const io = require('socket.io')(server, {
+    cors: {
+      origin: 'http://localhost:3000',
+    }
+  });
+const router = require('./router');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-let arr = [];
 
-app.get('/', (req, res) => {
-    res.send({hi: 'there'});
-})
+io.on('connection', (socket) => {
+    console.log("We have a new connection!!");
 
-app.post('/email', (req, res) => {
-    const email = req.body.email;
+    socket.on('disconnect', () => {
+        console.log("User has disconnected");
+    });
+});
 
-    var regx = /^([a-zA-Z0-9\._]+)@([a-zA-Z])+(.iitr.ac.in)/;
+app.use(router);
 
-    if(email.match(regx))
-    {
-        console.log("IITR Student");
-    }
-    else{
-        console.log("NOT AN IITR STUDENT");
-    }
-
-    arr.push(email);
-    console.log(arr);
-    res.redirect('/');
-})
-
-app.listen(5000);
+server.listen(PORT);
