@@ -38,8 +38,13 @@ io.on('connection', (socket) => {
     } else {
       strangerQueue = socket.id;
     }
-    // const user = addUser(socket.id);
-    // console.log(user);
+    
+    socket.on('sendMessage', (message, callback) => {
+      if (users[socket.id].connectedTo !== -1 && sockets[users[socket.id].connectedTo]) {
+        sockets[users[socket.id].connectedTo].emit('message', message)
+        callback();
+      }
+    });
 
     socket.on('disconnect', (err) => {
         console.log("User has disconnected");
