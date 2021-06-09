@@ -8,7 +8,18 @@ const Chat = ({location}) => {
 
     useEffect(() => {
         socket = io(ENDPOINT);
-        console.log(socket);
+        // console.log(socket);
+        socket.on('conn', obj => {
+            console.log(`You are now chatting with a random stranger !!`);
+            console.log(obj);
+
+        })
+        // socket.on('disconn', (data) => {
+        //     var who = data.who;
+        //     var reason = data.reason;
+
+
+        // })
     }, [ENDPOINT, location.search]);
 
     return(
