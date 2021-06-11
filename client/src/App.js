@@ -8,7 +8,7 @@ const App  = () => {
     return(
         <BrowserRouter>
             <Route path="/" exact component={Homepage}/>
-            <Route path = "/chat" component = {Chat}/>
+            <Route path = "/chat" exact component = {Chat}/>
         </BrowserRouter>
     ) 
 };
