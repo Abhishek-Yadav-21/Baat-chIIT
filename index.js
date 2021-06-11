@@ -12,7 +12,6 @@ const io = require('socket.io')(server, {
   });
 
 const router = require('./router');
-// const {addUser, removeUser, getUser} = require('./Users.js');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
