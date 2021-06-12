@@ -1,6 +1,9 @@
-const passport = require('passport');
+const passport       = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const keys = require('../config/keys');
+const keys           = require('../config/keys');
+const mongoose       = require('mongoose');
+
+const User = mongoose.model('users');
 
 var branch = ['bt.iitr.ac.in', 'ch.iitr.ac.in'];
 var k =0;
@@ -27,6 +30,7 @@ passport.use(
             {
                 if(profile._json.hd === branch[i]){
                     done(null, profile);
+                    new User({googleId: profile.id}).save();
                     break;
                 }
                 k++;
@@ -35,6 +39,7 @@ passport.use(
             {
                 done(new Error("Wrong domain!"));
             }
+
         }
  )
 );
