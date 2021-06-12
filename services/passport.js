@@ -8,14 +8,15 @@ const User = mongoose.model('users');
 var branch = ['bt.iitr.ac.in', 'ch.iitr.ac.in'];
 var k =0;
 
-passport.serializeUser(function(user, callback){
+passport.serializeUser((user, done) => {
     console.log('serializing user.');
-    callback(null, user.id);
+    done(null, user.id);
 });
 
-passport.deserializeUser(function(user, callback){
-   console.log('deserialize user.');
-   callback(null, user.id);
+passport.deserializeUser(async (id, done) => {
+    console.log('deserialising user')
+   const user = await User.findById(id)
+        done(null, user);
 });
 
 passport.use(
