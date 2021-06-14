@@ -1,0 +1,65 @@
+html, body{
+    margin: 0;
+    font-size: 62.5%;
+} 
+
+.bg {
+    background-image: url('./Assets/bg.png');
+    background-size: cover;
+    background-position: bottom;
+    height: 100vh;
+} 
+div.heading {
+    display: flex;
+    justify-content: center;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10rem;
+    line-height: 15rem;
+    color: white;
+    padding-top: 3rem;
+}
+
+div.desc{
+    display: flex;
+    justify-content: center;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.2rem;
+    line-height: 4.4rem;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+}
+
+button.massive.ui.button{
+    height: 5.5rem;
+    width: 25rem;
+    border-radius: 5rem;
+    background: #461EB8;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.5rem;
+    align-self: center;
+    padding: 1rem;
+/* identical to box height */
+
+
+color: #FFFFFF;
+}
+
+@media (max-width: 830px){
+    html{
+        font-size: 50%;
+    }
+}
