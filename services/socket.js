@@ -5,25 +5,28 @@ const express = require('express');
 const app = express();
 const server = http.createServer(app);
 
+
 const io = require('socket.io')(server, {
-    cors: {
-      origin: 'http://localhost:3000',
-    }
-  });
+  cors: {
+    origin: 'http://localhost:3000',
+  }
+});
+
 
 var sockets = {},
-	users = {},
-	strangerQueue = false;
+users = {},
+strangerQueue = false;
 
 
-io.on('connection', (socket) => {
+module.exports = function(io) {
+  io.on('connection', (socket) => {
     console.log("We have a new connection!!", socket.id);
-
+  
     sockets[socket.id] = socket;
     users[socket.id] = {
       connectedTo: -1,
     }
-
+  
     if(strangerQueue !== false){
       users[socket.id].connectedTo = strangerQueue;
       users[strangerQueue].connectedTo = socket.id;
@@ -40,10 +43,10 @@ io.on('connection', (socket) => {
         callback();
       }
     });
-
+  
     socket.on('disconnect', (err) => {
         console.log("User has disconnected");
-
+  
         var connTo = (users[socket.id] && users[socket.id].connectedTo);
         if(connTo === undefined){
           connTo = -1;
@@ -52,12 +55,13 @@ io.on('connection', (socket) => {
           sockets[connTo].emit("disconn", {who: 2, reason: err && err.toString()});
           users[connTo].connectedTo = -1;
         }
-
+  
         delete sockets[socket.id];
         delete users[socket.id];
-
+  
         if(strangerQueue === socket.id || strangerQueue === connTo) {
           strangerQueue = false;
         }
     });
-});
+  });
+}  
