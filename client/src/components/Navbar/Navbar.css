@@ -45,13 +45,13 @@ span{
     }
 }
 
-@media(max-width: 768px) {
+/* @media(min-width: 480px) and (max-width: 767px){
     html{
-        font-size: 45%;
+        font-size: 30%;
     }
-}
+} */
 @media(max-width: 830px) {
     html{
-        font-size: 50%;
+        font-size: 48%;
     }
 }
