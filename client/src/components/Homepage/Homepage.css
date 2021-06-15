@@ -58,8 +58,40 @@ button.massive.ui.button{
 color: #FFFFFF;
 }
 
-@media (max-width: 830px){
-    html{
-        font-size: 50%;
-    }
+img{
+    width: 40rem;
+    height: 35rem;
+    
 }
+.first{
+    margin-top: 15rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+h3{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 61px;
+/* identical to box height */
+    color: #000000;
+}
+
+.content{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    padding-right: 10rem;
+
+    color: #787878;
+}
+
+.content_head{
+    align-self: center;
+    width: 50rem;
+}
+
