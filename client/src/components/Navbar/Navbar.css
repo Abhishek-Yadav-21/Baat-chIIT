@@ -37,6 +37,8 @@ span{
     font-weight: bold;
 }
 
+
+
 @media(max-width: 998px) {
     html{
         font-size: 55%;

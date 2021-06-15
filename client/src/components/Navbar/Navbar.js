@@ -1,5 +1,6 @@
 import React from 'react';
 import './Navbar.css';
+import LoginPopup from '../Login-Popup/LoginPopup'
 
 class Navbar extends React.Component {
     render(){
@@ -15,7 +16,7 @@ class Navbar extends React.Component {
                                 About
                             </a>
                             <a className="ui item">
-                                Sign Up
+                                <LoginPopup />
                             </a>
                             <a id="login" className="ui item">
                                 Log In
