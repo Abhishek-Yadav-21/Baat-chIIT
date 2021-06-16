@@ -1,6 +1,6 @@
 import React from 'react';
 import './LoginPopup.css';
-import { Button, Icon, Modal, Transition } from 'semantic-ui-react'
+import { Button, Icon, Modal, TransitionablePortal } from 'semantic-ui-react'
 
 function exampleReducer(state, action) {
   switch (action.type) {
@@ -27,7 +27,7 @@ const LoginPopup = () => {
         Sign Up
       </Button>
       
-
+      <TransitionablePortal open={open}  transition={{ animation:'scale', duration: 300 }}>
       <Modal
         size={size}
         open={open}
@@ -36,7 +36,7 @@ const LoginPopup = () => {
       >
         <Modal.Header>Awesome</Modal.Header>
         <Modal.Content>
-          <p>By registering you agree to our terms and services and our proivacy policy</p>
+              <p>By registering you agree to our terms and services and our proivacy policy</p>
         </Modal.Content>
         <Modal.Actions>
           <Button id="button" positive onClick={() => dispatch({ type: 'close' })}>
@@ -45,6 +45,7 @@ const LoginPopup = () => {
            </Button>
         </Modal.Actions>
       </Modal>
+      </TransitionablePortal>
     </>
    
   )
