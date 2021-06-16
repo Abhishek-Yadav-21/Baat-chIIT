@@ -7,6 +7,7 @@ import Second from './Assets/second.png';
 import Third from './Assets/third.png';
 import Footer from '../Footer/Footer';
 
+
 class Homepage extends React.Component {
     render(){
         return (
