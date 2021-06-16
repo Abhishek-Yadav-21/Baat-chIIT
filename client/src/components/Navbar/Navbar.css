@@ -27,18 +27,6 @@ span{
 
 
 
-#login{
-    border: 2px solid #F49749;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    background: white;
-    border-radius: 8px;
-    color: black;
-    font-weight: bold;
-}
-
-
-
 @media(max-width: 998px) {
     html{
         font-size: 55%;

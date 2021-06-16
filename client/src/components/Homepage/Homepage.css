@@ -41,7 +41,7 @@ div.desc{
     padding-top: 3rem;
 }
 
-button.massive.ui.button{
+.massive.ui.button{
     height: 5.5rem;
     width: 25rem;
     border-radius: 5rem;

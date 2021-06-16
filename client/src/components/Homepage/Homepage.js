@@ -6,6 +6,7 @@ import First from './Assets/first.png';
 import Second from './Assets/second.png';
 import Third from './Assets/third.png';
 import Footer from '../Footer/Footer';
+import LoginPopup from '../Login-Popup/LoginPopup'
 
 
 class Homepage extends React.Component {
@@ -21,7 +22,7 @@ class Homepage extends React.Component {
                         Come have a chat with Machau, Ghissu, Despo, and Bakchod peeps.  
                     </div>
                     <div className="button">
-                        <button className="massive ui button">Get Started</button>
+                        <div><LoginPopup id="getStarted" text="Already have an account?" link="Log In" name="Get Started"/></div>
                     </div>
                 </div>
                 <div className="ui container">

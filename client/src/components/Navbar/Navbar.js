@@ -16,11 +16,11 @@ class Navbar extends React.Component {
                                 About
                             </a>
                             <a className="ui item">
-                                <LoginPopup />
+                                <LoginPopup id="signUp" text="Already have an account?" link="Log In" name="Sign Up"/>
                             </a>
-                            <a id="login" className="ui item">
-                                Log In
-                            </a>
+                            <div className="ui item">
+                                <LoginPopup id="logIn" text="No Account?" link="Sign Up" name="Log In" />
+                            </div>
                         </div>
                     </div>
                 </div>
