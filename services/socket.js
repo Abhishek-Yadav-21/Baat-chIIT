@@ -2,6 +2,7 @@ const socketio = require('socket.io');
 const http = require('http');
 const cors = require('cors');
 const express = require('express');
+const { callbackify } = require('util');
 const app = express();
 const server = http.createServer(app);
 
@@ -24,23 +25,57 @@ module.exports = function(io) {
   
     sockets[socket.id] = socket;
     users[socket.id] = {
-      connectedTo: -1,
+      connectedTo: -1
     }
   
     if(strangerQueue !== false){
       users[socket.id].connectedTo = strangerQueue;
       users[strangerQueue].connectedTo = socket.id;
-      socket.emit('conn', users[socket.id].connectedTo);
-      sockets[strangerQueue].emit('conn');
+      socket.emit('conn',  {id: users[socket.id].connectedTo, s:2});
+      sockets[strangerQueue].emit('conn', {id: users[strangerQueue].connectedTo, s:1});
       strangerQueue = false;
     } else {
       strangerQueue = socket.id;
     }
+
+    socket.on("new", function () {
+		
+      // Got data from someone
+      if (strangerQueue !== false) {
+        users[socket.id].connectedTo = strangerQueue;
+        users[strangerQueue].connectedTo = socket.id;
+        users[socket.id].isTyping = false;
+        users[strangerQueue].isTyping = false;
+        socket.emit('conn');
+        sockets[strangerQueue].emit('conn');
+        strangerQueue = false;
+      } else {
+        strangerQueue = socket.id;
+      }
+      
+    });
+
+    socket.on("disconn", function () {
+      var connTo = users[socket.id].connectedTo;
+      if (strangerQueue === socket.id || strangerQueue === connTo) {
+        strangerQueue = false;
+      }
+      users[socket.id].connectedTo = -1;
+      users[socket.id].isTyping = false;
+      if (sockets[connTo]) {
+        users[connTo].connectedTo = -1;
+        users[connTo].isTyping = false;
+        sockets[connTo].emit("disconn", {who: 2});
+      }
+      socket.emit("disconn", {who: 1});
+      peopleActive -= 2;
+      io.sockets.emit('stats', {people: peopleActive});
+    });
     
-    socket.on('sendMessage', (message, callback) => {
+    socket.on('sendMessage', (message) => {
       if (users[socket.id].connectedTo !== -1 && sockets[users[socket.id].connectedTo]) {
-        sockets[users[socket.id].connectedTo].emit('message', message)
-        callback();
+        sockets[users[socket.id].connectedTo].emit('message', {text: message, user: users[socket.id].connectedTo})
+        sockets[socket.id].emit('message', {text: message, user: users[socket.id].connectedTo});
       }
     });
   

@@ -120,3 +120,12 @@ div.content{
     color: black;
     font-weight: bold;
 }
+
+#logout{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background: black;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+}

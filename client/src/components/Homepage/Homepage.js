@@ -1,5 +1,4 @@
 import React from 'react';
-// import Input from './Input';
 import './Homepage.css';
 import Navbar from '../Navbar/Navbar';
 import First from './Assets/first.png';
