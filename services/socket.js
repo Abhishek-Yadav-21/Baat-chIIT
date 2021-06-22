@@ -5,6 +5,7 @@ const express = require('express');
 const { callbackify } = require('util');
 const app = express();
 const server = http.createServer(app);
+// const logo1 = require('../client/src/components/Chat/Assets/wait1.svg');
 
 
 const io = require('socket.io')(server, {
@@ -32,10 +33,12 @@ module.exports = function(io) {
       users[socket.id].connectedTo = strangerQueue;
       users[strangerQueue].connectedTo = socket.id;
       socket.emit('conn',  {id: users[socket.id].connectedTo, s:2});
-      sockets[strangerQueue].emit('conn', {id: users[strangerQueue].connectedTo, s:1});
+      sockets[strangerQueue].emit('conn', {text: "You are now chatting with a Stranger!" , id: users[strangerQueue].connectedTo, s:1});
+      socket.emit('waiting', {text: "You are now chatting with a Stranger!"})
       strangerQueue = false;
     } else {
       strangerQueue = socket.id;
+      socket.emit('waiting', {text: "Hold up, we are searching for someone to chat"})
     }
 
     socket.on("new", function () {

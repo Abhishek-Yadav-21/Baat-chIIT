@@ -5,8 +5,6 @@ const Message = ({id, message: {text, user}}) => {
 
     let isSentByCurrentUser = false;
 
-   //  console.log(user);
-   //  console.log(text);
     if(user===id)
     {
        isSentByCurrentUser=true;
@@ -16,12 +14,12 @@ const Message = ({id, message: {text, user}}) => {
     return (
        isSentByCurrentUser
          ?(
-            <div>
-               <p>{text}</p>
+            <div className="me">
+               <p id="right">{text}</p>
             </div>
          ): (
-            <div className="gandu">
-               <p>{text}</p>
+            <div className="other">
+               <p id="left">{text}</p>
             </div>
          )
     )

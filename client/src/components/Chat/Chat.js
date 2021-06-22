@@ -4,6 +4,8 @@ import NavChat from './NavChat/NavChat';
 import './Chat.css';
 import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
+import Wait1 from './Assets/wait1.svg';
+import Wait2 from './Assets/wait.svg';
 
 let socket;
 // var Who;
@@ -15,6 +17,7 @@ const Chat = ({location}) => {
 
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
+    const [waitMessage, setWaitMessage] = useState('');
 
     useEffect(() => {
         socket = io(ENDPOINT);
@@ -23,9 +26,12 @@ const Chat = ({location}) => {
         socket.on('conn', (data) => {
             console.log(`You are now chatting with a random stranger !!`);
             id = data.id;
+            setWaitMessage(data.text);
             console.log(data.id);
-            // console.log(data.who);
-            // Who = data.who;
+        })
+        socket.on('waiting', text => {
+            setWaitMessage(text.text);
+            // setLogo(text.path);
         })
         socket.on('disconn', (data) => {
             var who = data.who;
@@ -37,32 +43,30 @@ const Chat = ({location}) => {
 
     useEffect(() => {
         socket.on('message', (message) => {
-            // Who = who;
             const addMessage = (message) => setMessages(state => [...state, message]);
             addMessage(message);
-            // console.log(Who);
         })
     }, [arr]);
 
     useEffect(() => {
         if(message) {
-            // const addMessage = (message) => setMessages(state => [...state, message]);
-            // addMessage(message);
-            // Who=1;
             socket.emit('sendMessage', message);
-            // console.log(message);
         }
         else{
             console.log("no message");
         }
     }, [message]);
-    // const sendMessage = (event) => {
-    //     event.preventDefault();
-    //     if(message) {
-    //         // setMessages1([...messages1, message]);
-    //         socket.emit('sendMessage', message, () => { setMessage('')})
-    //     }
-    // }
+
+    const logo = () => {
+        if(waitMessage==="Hold up, we are searching for someone to chat")
+        {
+            return Wait1;
+        }
+        else{
+            return Wait2;
+        }
+    }
+    
 
     console.log(message, messages);
 
@@ -71,16 +75,25 @@ const Chat = ({location}) => {
             <NavChat />
             <div className="ui container">
                 <div className="space1">
-                    <div id="space_left">You are chatting with a Stranger</div>
-                    <div id="space_right">Chat box</div>
+                    <div id="space_left">
+                        <div id="waitMessage">
+                            {waitMessage}
+                            <div>
+                                <img className="waitLogo" src={logo()} />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="space_right">
+                        <div>
+                            <Messages id={id} messages={messages}/>
+                        </div>
+                    </div>
                 </div>
                 <div className="space2">
                     <div>
                         <button id="find" className="ui button large">Find new</button>
                     </div>
                     <div className="space1">
-                        {/* <Message message={message} /> */}
-                        <Messages id={id} messages={messages}/>
                         <Input message={message} setMessage={setMessage} />
                     </div>
                 </div>

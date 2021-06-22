@@ -1,34 +1,36 @@
 import React from 'react';
 import './Messages.css';
 import Message from '../Message/Message';
-import ScrollToBottom from 'react-scroll-to-bottom';
-
-const Messages = ({id, messages, Who}) => (
-    <ScrollToBottom>
-        {messages.map((message, i) => 
-            <div key={i}><Message id={id} message={message}/></div>
-        )}
-    </ScrollToBottom>
-)
+import { useEffect, useRef } from 'react';
 
 
-// class Messages extends React.Component {
 
-//     Show(){
-//             // <div><Message Who={this.props.Who} message={this.props.messages[i]}/></div>  
-//         return (this.props.messages.map((message, i=this.props.index) => 
-//         <div key={this.props.index}><Message message={message} Who={this.props.Who}/></div>)
-//     ) 
-               
-//     }
+const Messages = ({id, messages}) => {
+    
 
-//     render(){
-//         return(
-//             <ScrollToBottom>
-//                 {this.Show()}
-//             </ScrollToBottom>
-//         )
-//     }
-// }
+        const messagesEndRef = useRef(null)
+      
+        const scrollToBottom = () => {
+          messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+        }
+      
+        useEffect(() => {
+          scrollToBottom()
+        }, [messages]);
+
+
+        return(
+            <div className="ScrollToBottom">
+                {messages.map((message, i) => 
+                    <div key={i}><Message id={id} message={message}/></div>
+                )}
+                <div ref={messagesEndRef} />
+            </div>
+        )
+        
+    
+}
+
+
 
 export default Messages;
