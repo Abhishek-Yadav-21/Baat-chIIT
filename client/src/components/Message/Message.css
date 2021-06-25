@@ -14,11 +14,13 @@
     padding: 0.6rem;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 1.5rem;
+    line-height: 2rem;
     margin: 0.1rem;
     border: 2px solid #461EB8;
     border-radius: 0.5rem;
     background: #461EB8;
+    max-width: 35rem;
+    overflow-wrap: break-word;
     /* identical to box height */
 
 
@@ -32,9 +34,11 @@
     padding: 0.6rem;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 1.5rem;
+    line-height: 2rem;
     margin: 0.1rem;
     border: 2px solid white;
     border-radius: 0.5rem;
     background: white;
+    max-width: 35rem;
+    overflow-wrap: break-word;
 }

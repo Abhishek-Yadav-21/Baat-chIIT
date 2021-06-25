@@ -32,13 +32,13 @@ module.exports = function(io) {
     if(strangerQueue !== false){
       users[socket.id].connectedTo = strangerQueue;
       users[strangerQueue].connectedTo = socket.id;
-      socket.emit('conn',  {id: users[socket.id].connectedTo, s:2});
-      sockets[strangerQueue].emit('conn', {text: "You are now chatting with a Stranger!" , id: users[strangerQueue].connectedTo, s:1});
-      socket.emit('waiting', {text: "You are now chatting with a Stranger!"})
+      socket.emit('conn',  {id: users[socket.id].connectedTo});
+      sockets[strangerQueue].emit('conn', {code: 1, bcode:1,  text: "You are now chatting with a Stranger!" , id: users[strangerQueue].connectedTo});
+      socket.emit('waiting', {bcode: 1, code:1,  text: "You are now chatting with a Stranger!"})
       strangerQueue = false;
     } else {
       strangerQueue = socket.id;
-      socket.emit('waiting', {text: "Hold up, we are searching for someone to chat"})
+      socket.emit('waiting', {code:2, bcode:2,  text: "Hold up, we are searching for someone to chat"})
     }
 
     socket.on("new", function () {
@@ -49,11 +49,13 @@ module.exports = function(io) {
         users[strangerQueue].connectedTo = socket.id;
         users[socket.id].isTyping = false;
         users[strangerQueue].isTyping = false;
-        socket.emit('conn');
-        sockets[strangerQueue].emit('conn');
+        socket.emit('conn', {id: users[socket.id].connectedTo});
+        sockets[strangerQueue].emit('conn', {code: 1, bcode:1,  text: "You are now chatting with a Stranger!", id: users[strangerQueue].connectedTo});
+        socket.emit('waiting', {bcode: 1, code:1, text: "You are now chatting with a Stranger!"})
         strangerQueue = false;
       } else {
         strangerQueue = socket.id;
+        socket.emit('waiting', {code:2, bcode:2,  text: "Hold up, we are searching for someone to chat"})
       }
       
     });
@@ -68,11 +70,9 @@ module.exports = function(io) {
       if (sockets[connTo]) {
         users[connTo].connectedTo = -1;
         users[connTo].isTyping = false;
-        sockets[connTo].emit("disconn", {who: 2});
+        sockets[connTo].emit("disconn", {who: 2, text: "Stranger has left the chat", bcode:3, code: 3});
       }
-      socket.emit("disconn", {who: 1});
-      peopleActive -= 2;
-      io.sockets.emit('stats', {people: peopleActive});
+      socket.emit("disconn", {who: 1, bcode:3, code: 3, text: "You have left the chat"});
     });
     
     socket.on('sendMessage', (message) => {
@@ -90,7 +90,7 @@ module.exports = function(io) {
           connTo = -1;
         }
         if(connTo !== -1 && sockets[connTo]) {
-          sockets[connTo].emit("disconn", {who: 2, reason: err && err.toString()});
+          sockets[connTo].emit("disconn", {bcode:3, code: 3, who: 2, reason: err && err.toString(), id: users[socket.id].connectedTo, text: "Stranger has left the chat"});
           users[connTo].connectedTo = -1;
         }
   

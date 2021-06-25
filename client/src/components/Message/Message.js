@@ -1,9 +1,10 @@
 import React from 'react';
 import './Message.css';
 
-const Message = ({id, message: {text, user}}) => {
+const Message = ({disconnId, id, message: {text, user}}) => {
 
     let isSentByCurrentUser = false;
+
 
     if(user===id)
     {
@@ -12,17 +13,19 @@ const Message = ({id, message: {text, user}}) => {
 
    
     return (
-       isSentByCurrentUser
-         ?(
-            <div className="me">
-               <p id="right">{text}</p>
-            </div>
-         ): (
-            <div className="other">
-               <p id="left">{text}</p>
-            </div>
-         )
-    )
+       <div>
+            {isSentByCurrentUser
+            ?(
+               <div className="me">
+                  <div id="right">{text}</div>
+               </div>
+            ): (
+               <div className="other">
+                  <p id="left">{text}</p>
+               </div>
+            )}
+        </div>   
+    )    
 }
 
 export default Message;

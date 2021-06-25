@@ -6,10 +6,13 @@ import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
 import Wait1 from './Assets/wait1.svg';
 import Wait2 from './Assets/wait.svg';
+import Wait3 from './Assets/wait2.svg';
+import FindButton from './FindButton/FindButton';
 
 let socket;
 // var Who;
 var id;
+// var disconnId;
 var arr = [];
 
 const Chat = ({location}) => {
@@ -18,6 +21,10 @@ const Chat = ({location}) => {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
     const [waitMessage, setWaitMessage] = useState('');
+    const [code, setCode] = useState(null);
+    const [bcode, setBcode] = useState(null);
+    const [end, setEnd] = useState(false);
+    const [find, setFind] = useState(false);
 
     useEffect(() => {
         socket = io(ENDPOINT);
@@ -27,19 +34,43 @@ const Chat = ({location}) => {
             console.log(`You are now chatting with a random stranger !!`);
             id = data.id;
             setWaitMessage(data.text);
-            console.log(data.id);
+            setMessages([]);
+            setCode(data.code);
+            setBcode(data.bcode);
+            // console.log(data.id);
         })
         socket.on('waiting', text => {
             setWaitMessage(text.text);
+            setCode(text.code);
+            setBcode(text.bcode);
             // setLogo(text.path);
         })
         socket.on('disconn', (data) => {
-            var who = data.who;
-            var reason = data.reason;
-
-
-        })
+            console.log(data.id);
+            // disconnId = data.id;
+            // setMessage('');
+            console.log(data.text);
+            setCode(data.code);
+            setBcode(data.bcode);
+            setWaitMessage(data.text);
+            console.log(code);
+        });
     }, [ENDPOINT, location.search]);
+
+    useEffect(() => {
+        if(end===true)
+        {
+            socket.emit("disconn");
+            setEnd(false);
+        }
+    }, [end])
+
+    useEffect(() => {
+        if(find===true){
+            socket.emit("new");
+            setFind(false);
+        }
+    }, [find])
 
     useEffect(() => {
         socket.on('message', (message) => {
@@ -58,14 +89,25 @@ const Chat = ({location}) => {
     }, [message]);
 
     const logo = () => {
-        if(waitMessage==="Hold up, we are searching for someone to chat")
-        {
-            return Wait1;
-        }
-        else{
+
+        if(waitMessage==="You are now chatting with a Stranger!"){
             return Wait2;
         }
+        else if(waitMessage === "Stranger has left the chat" || waitMessage==="You have left the chat")
+        {
+            return Wait3;
+        }
+        else{
+            return Wait1;
+        }
+
     }
+
+    // const check = (disconnId) => {
+    //     if(disconnId){
+    //         return <div>hello</div>
+    //     }
+    // }
     
 
     console.log(message, messages);
@@ -90,11 +132,13 @@ const Chat = ({location}) => {
                     </div>
                 </div>
                 <div className="space2">
-                    <div>
-                        <button id="find" className="ui button large">Find new</button>
+                    <div id="findButton">
+                        <div>
+                            <FindButton find={find} setFind={setFind} end={end} setEnd={setEnd} bcode={bcode} setBcode={setBcode}/>
+                        </div>
                     </div>
                     <div className="space1">
-                        <Input message={message} setMessage={setMessage} />
+                        <Input code={code} setCode={setCode} message={message} setMessage={setMessage} />
                     </div>
                 </div>
             </div>
@@ -104,4 +148,3 @@ const Chat = ({location}) => {
 
 export default Chat;
 
-// setMessages([...messages, message]);

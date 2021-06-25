@@ -5,6 +5,7 @@
     height: 45rem;
     padding:2rem;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
  .ScrollToBottom::-webkit-scrollbar {
