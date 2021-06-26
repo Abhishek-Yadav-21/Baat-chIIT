@@ -26,13 +26,16 @@ module.exports = function(io) {
   
     sockets[socket.id] = socket;
     users[socket.id] = {
-      connectedTo: -1
+      connectedTo: -1,
+      isTyping: false
     }
   
     if(strangerQueue !== false){
       users[socket.id].connectedTo = strangerQueue;
       users[strangerQueue].connectedTo = socket.id;
+      users[socket.id].isTyping = false;
       socket.emit('conn',  {id: users[socket.id].connectedTo});
+      users[strangerQueue].isTyping = false;
       sockets[strangerQueue].emit('conn', {code: 1, bcode:1,  text: "You are now chatting with a Stranger!" , id: users[strangerQueue].connectedTo});
       socket.emit('waiting', {bcode: 1, code:1,  text: "You are now chatting with a Stranger!"})
       strangerQueue = false;
@@ -73,6 +76,15 @@ module.exports = function(io) {
         sockets[connTo].emit("disconn", {who: 2, text: "Stranger has left the chat", bcode:3, code: 3});
       }
       socket.emit("disconn", {who: 1, bcode:3, code: 3, text: "You have left the chat"});
+    });
+
+    socket.on('typing', (isTyping)=> {
+      if (users[socket.id].connectedTo !== -1 && sockets[users[socket.id].connectedTo]) {
+        users[socket.id].isTyping = isTyping;
+        sockets[users[socket.id].connectedTo].emit('istyping', isTyping);
+        // && users[socket.id].isTyping !== isTyping
+        // sockets[socket.id].emit('istyping', isTyping);
+      }
     });
     
     socket.on('sendMessage', (message) => {

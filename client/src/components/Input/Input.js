@@ -1,9 +1,21 @@
 import React from 'react'
+import debounce from 'lodash/debounce';
 import './Input.css';
 
 class Input extends React.Component{
 
     state = {term: '', disabled: false};
+
+    onInputChange = (event) =>{
+
+        this.props.setTyping(true);
+        this.setState({term: event.target.value});
+        this.handleTyping();
+    }
+
+    handleTyping = debounce(function() { // continually delays setting "isTyping" to false for 500ms until the user has stopped typing and the delay runs out
+        this.props.setTyping(false);      
+    }, 500);
 
     onFormSubmit = (event) =>{
         event.preventDefault();
@@ -26,7 +38,7 @@ class Input extends React.Component{
     render(){
         return(
             <form onSubmit={this.onFormSubmit}>
-                <input disabled = {(this.state.disabled)? "disabled" : ""} className="ui input" value={this.state.term} placeholder="Type a message" onChange={e => this.setState({term: e.target.value})}/>
+                <input disabled = {(this.state.disabled)? "disabled" : ""} className="ui input" value={this.state.term} placeholder="Type a message" onChange={this.onInputChange}/>
                 <button id="emoji" className="ui button">emoji</button>
             </form>
         )

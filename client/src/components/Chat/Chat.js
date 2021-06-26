@@ -8,11 +8,11 @@ import Wait1 from './Assets/wait1.svg';
 import Wait2 from './Assets/wait.svg';
 import Wait3 from './Assets/wait2.svg';
 import FindButton from './FindButton/FindButton';
+import IsTyping from '../IsTyping/IsTyping';
+
 
 let socket;
-// var Who;
 var id;
-// var disconnId;
 var arr = [];
 
 const Chat = ({location}) => {
@@ -25,10 +25,11 @@ const Chat = ({location}) => {
     const [bcode, setBcode] = useState(null);
     const [end, setEnd] = useState(false);
     const [find, setFind] = useState(false);
+    const [typing, setTyping] = useState(false);
+    const [b , setB] = useState(false);
 
     useEffect(() => {
         socket = io(ENDPOINT);
-        // console.log(socket);
 
         socket.on('conn', (data) => {
             console.log(`You are now chatting with a random stranger !!`);
@@ -37,18 +38,14 @@ const Chat = ({location}) => {
             setMessages([]);
             setCode(data.code);
             setBcode(data.bcode);
-            // console.log(data.id);
         })
         socket.on('waiting', text => {
             setWaitMessage(text.text);
             setCode(text.code);
             setBcode(text.bcode);
-            // setLogo(text.path);
         })
         socket.on('disconn', (data) => {
             console.log(data.id);
-            // disconnId = data.id;
-            // setMessage('');
             console.log(data.text);
             setCode(data.code);
             setBcode(data.bcode);
@@ -64,6 +61,19 @@ const Chat = ({location}) => {
             setEnd(false);
         }
     }, [end])
+
+
+    useEffect(() => {
+        socket.on('istyping', isTyping => {
+            setB(isTyping);
+           
+        })
+    });
+
+    useEffect(() => {
+            socket.emit("typing", typing);
+    });
+
 
     useEffect(() => {
         if(find===true){
@@ -101,13 +111,7 @@ const Chat = ({location}) => {
             return Wait1;
         }
 
-    }
-
-    // const check = (disconnId) => {
-    //     if(disconnId){
-    //         return <div>hello</div>
-    //     }
-    // }
+    }   
     
 
     console.log(message, messages);
@@ -128,6 +132,7 @@ const Chat = ({location}) => {
                     <div id="space_right">
                         <div>
                             <Messages id={id} messages={messages}/>
+                            <IsTyping b={b}/>
                         </div>
                     </div>
                 </div>
@@ -138,7 +143,7 @@ const Chat = ({location}) => {
                         </div>
                     </div>
                     <div className="space1">
-                        <Input code={code} setCode={setCode} message={message} setMessage={setMessage} />
+                        <Input typing={typing} setTyping={setTyping} code={code} setCode={setCode} message={message} setMessage={setMessage} />
                     </div>
                 </div>
             </div>
