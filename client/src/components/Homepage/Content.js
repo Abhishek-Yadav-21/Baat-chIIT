@@ -3,7 +3,6 @@ import First from './Assets/first.png';
 import Second from './Assets/second.png';
 import Third from './Assets/third.png';
 import './Content.css';
-import ScrollAnimation from 'react-animate-on-scroll';
 
 function Content() {
     return (
