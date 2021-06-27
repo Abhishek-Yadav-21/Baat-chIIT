@@ -10,11 +10,8 @@
     "react": "^17.0.2",
     "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^17.0.2",
-<<<<<<< HEAD
     "react-reveal": "^1.2.2",
-=======
     "react-remove-scroll-bar": "^2.2.0",
->>>>>>> e09dfe3ffe03c5a4ff51bf743d15c7631c658556
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-scroll-to-bottom": "^4.1.2",
