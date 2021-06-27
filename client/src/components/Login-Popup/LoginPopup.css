@@ -7,10 +7,10 @@
 #my{
     font-family: AvenirNext,sans-serif;
     text-align: center;
-    border-radius: 10px;
-    padding: 14px 14px 0;
-    box-shadow: 0 12px 30px rgb(0 0 0 / 10%);
-    width: 374px;
+    border-radius: 1rem;
+    padding: 1.4rem 1.4rem 0;
+    box-shadow: 0 1.2rem 3rem rgb(0 0 0 / 10%);
+    width: 37rem;
     height:auto;
 }
 
@@ -47,7 +47,7 @@ div.content{
 }
 
 #my .icon-box {
-    margin-top: 26px;
+    margin-top: 2.6rem;
     background-color: #000000;
 }
 

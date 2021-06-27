@@ -10,11 +10,13 @@
     width: 100vw;
     top: 0;
     z-index: 999;
+    transition: all 0.4s ease-in;
   }
 
   .navbar.active{
-    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+    background: black;
     box-shadow: 5px 0 10px  #474747;
+    transition: all 0.4s ease;
   }
   
   .navbar-container {

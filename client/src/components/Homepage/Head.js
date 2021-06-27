@@ -15,10 +15,6 @@ function Head() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-   
-
-   const opacity= 1/(offsetY +1);
-   console.log(opacity);
 
   //  style={{ transform: `translateY(-${offsetY * 0.4}px)` }}
   // style={{color: `rgba(255, 255, 255, ${1/2(offsetY +1)})`}}
