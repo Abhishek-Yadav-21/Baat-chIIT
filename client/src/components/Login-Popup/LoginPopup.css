@@ -170,6 +170,7 @@ div.content{
     #HeadlogIn{
         display: flex;
     }
+}
 
 #logout{
     padding-top: 1rem;
@@ -180,4 +181,12 @@ div.content{
     font-weight: bold;
 }
 
+#not_logout{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background: #F0F0F0;
+    border-radius: 4px;
+    color: black;
+    font-weight: bold;
 }
+

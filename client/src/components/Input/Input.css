@@ -30,4 +30,21 @@ input.ui.input{
     font-weight: normal;
     line-height: 2rem;
     padding-left: 2rem;
+    transition: all 0.5s ease;
+}
+
+input.not.ui.input{
+    width: 67rem;
+    background: #181818;
+    color: white;
+    border-radius: 4.5rem;
+    border: none;
+    height: 3.5rem;
+    font-size: 1.5rem;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 2rem;
+    padding-left: 2rem;
+    transition: all 0.5s ease;
 }

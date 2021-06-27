@@ -10,7 +10,6 @@ import Wait3 from './Assets/wait2.svg';
 import FindButton from './FindButton/FindButton';
 import IsTyping from '../IsTyping/IsTyping';
 
-
 let socket;
 var id;
 var arr = [];
@@ -27,6 +26,9 @@ const Chat = ({location}) => {
     const [find, setFind] = useState(false);
     const [typing, setTyping] = useState(false);
     const [b , setB] = useState(false);
+    const [divId, setDivId] = useState('div');
+    const [spaceLeft, setSpaceLeft] = useState('space_left');
+    const [spaceRight, setSpceRight] = useState('space_right');
 
     useEffect(() => {
         socket = io(ENDPOINT);
@@ -98,6 +100,19 @@ const Chat = ({location}) => {
         }
     }, [message]);
 
+    const dark_mode = (event) => {
+        if(event){
+            setDivId('not_div');
+            setSpaceLeft('not_space_left');
+            setSpceRight('not_space_right');
+        }
+        else{
+            setSpaceLeft('space_left');
+            setSpceRight('space_right');
+            setDivId('div');
+        }
+    }
+
     const logo = () => {
 
         if(waitMessage==="You are now chatting with a Stranger!"){
@@ -117,11 +132,11 @@ const Chat = ({location}) => {
     console.log(message, messages);
 
     return(
-        <div>
-            <NavChat />
+        <div id={divId}>
+            <NavChat dark_mode={dark_mode}/>
             <div className="ui container">
                 <div className="space1">
-                    <div id="space_left">
+                    <div id={spaceLeft}>
                         <div id="waitMessage">
                             {waitMessage}
                             <div>
@@ -129,9 +144,9 @@ const Chat = ({location}) => {
                             </div>
                         </div>
                     </div>
-                    <div id="space_right">
+                    <div id={spaceRight}>
                         <div>
-                            <Messages id={id} messages={messages}/>
+                            <Messages divId={divId} id={id} messages={messages}/>
                             <IsTyping b={b}/>
                         </div>
                     </div>
@@ -143,7 +158,7 @@ const Chat = ({location}) => {
                         </div>
                     </div>
                     <div className="space1">
-                        <Input typing={typing} setTyping={setTyping} code={code} setCode={setCode} message={message} setMessage={setMessage} />
+                        <Input divId={divId} typing={typing} setTyping={setTyping} code={code} setCode={setCode} message={message} setMessage={setMessage} />
                     </div>
                 </div>
             </div>
