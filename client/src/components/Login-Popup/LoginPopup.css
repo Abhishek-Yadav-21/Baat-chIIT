@@ -143,7 +143,7 @@ div.content{
     font-size:1.8rem ;
 }
 
-<<<<<<< HEAD
+
 #HeadlogIn{
     height: 5.5rem;
     width: 25rem;
@@ -170,7 +170,7 @@ div.content{
     #HeadlogIn{
         display: flex;
     }
-=======
+
 #logout{
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -178,5 +178,6 @@ div.content{
     border-radius: 4px;
     color: white;
     font-weight: bold;
->>>>>>> e09dfe3ffe03c5a4ff51bf743d15c7631c658556
+}
+
 }
