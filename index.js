@@ -1,7 +1,7 @@
 const express       = require('express');
 const http          = require('http');
 const cors          = require('cors');
-const socketio      = require('socket.io');
+// const socketio      = require('socket.io');
 const PORT          = process.env.PORT || 5000;
 const cookieSession = require('cookie-session');
 const passport      = require('passport');

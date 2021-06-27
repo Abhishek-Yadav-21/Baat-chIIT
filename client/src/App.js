@@ -1,13 +1,13 @@
 import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
-import Homepage from './components/Homepage/Homepage';
+import Home from './components/Homepage/Home';
 import Chat from './components/Chat';
 
 const App  = () => {
 
     return(
         <BrowserRouter>
-            <Route path="/" exact component={Homepage}/>
+            <Route path="/" exact component={Home}/>
             <Route path = "/chat" exact component = {Chat}/>
         </BrowserRouter>
     ) 

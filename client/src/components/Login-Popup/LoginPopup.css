@@ -1,7 +1,6 @@
 .ui.modal {
     text-align: center;
     font-size: 1rem;
-    transition: 2s;
 }    
 
 
@@ -12,6 +11,7 @@
     padding: 14px 14px 0;
     box-shadow: 0 12px 30px rgb(0 0 0 / 10%);
     width: 374px;
+    height:auto;
 }
 
 #close-modal {
@@ -34,7 +34,7 @@ div.content{
     line-height: 32px;
     font-family: AvenirNext,sans-serif;
     margin-top: 2rem;
-    padding-top: 3rem;
+    padding-top: 1rem;
 }
 
 .bottom-notice {
@@ -63,8 +63,6 @@ div.content{
     padding-top: 10px;
     padding-left: 45px;
     background-repeat: no-repeat;
-
-
 }    
 
 #text{
@@ -87,6 +85,12 @@ div.content{
     width:2rem;
 }
 
+#yo{
+    height: 3rem;
+    width: 3rem;
+    margin-bottom: 1.5rem; 
+}
+
 #close{
     width:1.2rem;
     height:1.2rem;
@@ -94,15 +98,30 @@ div.content{
 
 #signUp{
     background:rgba(0, 0, 0, 0);
-    color:white;
-    font-weight: normal;
+    color: white;
+    line-height: 150%;
+    font-size: 1.8rem;
 }
+
+
+#signUp:hover{
+    color:#461EB8;
+    transition: 0.5s ;
+    
+}
+
+#logIn:hover{
+    background: linear-gradient(92.54deg, #3A41C6 -0.34%, #3D3BBB 24.22%, #4634A7 51.4%, #4C2C96 77.53%, #512888 100%);
+    color: white;
+    transition: 0.5s ;
+}
+
 
 #getStarted{
     height: 5.5rem;
     width: 25rem;
     border-radius: 5rem;
-    background: #461EB8;
+    background: linear-gradient(92.54deg, #3A41C6 -0.34%, #3D3BBB 24.22%, #4634A7 51.4%, #4C2C96 77.53%, #512888 100%);
     font-family: Open Sans;
     font-style: normal;
     font-weight: 600;
@@ -113,10 +132,41 @@ div.content{
 }    
 
 #logIn{
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    padding-left: 3.2rem;
+    padding-right: 3.2rem;
     background: white;
     border-radius: 4px;
     color: black;
     font-weight: bold;
+    font-size:1.8rem ;
+}
+
+#HeadlogIn{
+    height: 5.5rem;
+    width: 25rem;
+    border-radius: 5rem;
+    color: white;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.5rem;
+    align-self: center;
+    padding: 1rem;
+    background-color:transparent;
+    border: 2px solid white;
+    display: none;
+}
+
+
+#HeadlogIn:hover{
+    background-color: white;
+    color:#461EB8;
+}
+
+@media screen and (max-width:960px){
+    #HeadlogIn{
+        display: flex;
+    }
 }

@@ -14,8 +14,8 @@ const io = require('socket.io')(server, {
 
 
 var sockets = {},
-users = {},
-strangerQueue = false;
+    users = {},
+    strangerQueue = false;
 
 
 module.exports = function(io) {

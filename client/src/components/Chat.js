@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {io} from 'socket.io-client';
 
 let socket;
+var arr = [];
 
 const Chat = ({location}) => {
     const ENDPOINT = 'http://localhost:5000';
@@ -28,6 +29,7 @@ const Chat = ({location}) => {
     useEffect(() => {
         socket.on('message', (message) => {
             setMessages([...messages, message]);
+            // console.log(message,messages);
         })
     }, [messages]);
 
@@ -35,6 +37,7 @@ const Chat = ({location}) => {
         event.preventDefault();
         if(message) {
             socket.emit('sendMessage', message, () => setMessage(''));
+            // setMessages([...messages].map(message));
         }
     }
 

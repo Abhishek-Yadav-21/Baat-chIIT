@@ -1,0 +1,71 @@
+img{
+    width: 40rem;
+    height: 35rem;    
+}
+
+.first,.second,.third{
+    margin-top: 15rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.first{
+    margin-top: 5rem;
+}
+
+h3{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 61px;
+    color: #461EB8;
+}
+
+.content{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    padding-right: 10rem;
+    color: #787878;
+}
+
+.content_head{
+    align-self: center;
+    width: 50rem;
+}
+ 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'PT Sans', sans-serif;
+  }
+
+  .firstImage,.secondImage,.thirdImage,
+  .firstCont,.secondCont,.thirdCont{
+    display: flex;
+    justify-content: center;
+  }
+  
+
+
+  @media screen and (max-width: 960px){
+    .first,.third{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .second{
+        justify-content: center;
+    }
+
+    .firstImage,.thirdImage{
+        padding-top: 4rem;
+    }
+
+
+  }
