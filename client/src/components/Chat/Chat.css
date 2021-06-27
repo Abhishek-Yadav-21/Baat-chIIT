@@ -1,0 +1,72 @@
+.space1{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+}
+
+.space2{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+#typing{
+    display: flex;
+    width: 76rem;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+#findButton{
+    display: flex;
+    width: 28rem;
+    justify-content: center;
+}
+
+img.waitLogo{
+    width: 3rem;
+    height: 3rem;
+    margin-top: 1rem;
+}
+
+#space_left{
+    width: 28rem;
+    height: 49rem;
+    background: #F0F0F0;
+    border-radius: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#space_right{
+    width: 76rem;
+    height: 49rem;
+    background: #F0F0F0;
+    border-radius: 23px;
+    /* overflow-y: auto; */
+    /* padding: 2rem; */
+}
+
+#typing_right{
+    height: 2rem;
+    display: block;
+    width: 76rem;
+    background: #F0F0F0;
+    border-radius: 23px;
+}
+
+#waitMessage{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    text-align: center;
+    width: 20rem;
+
+    color: #919191;
+}
+
+

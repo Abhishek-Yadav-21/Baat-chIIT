@@ -1,0 +1,16 @@
+
+
+.ScrollToBottom {
+    margin-top: 2rem;
+    height: 45rem;
+    padding:2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+ .ScrollToBottom::-webkit-scrollbar {
+    display: none;
+  } 
+  
+
+  
