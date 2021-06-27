@@ -41,4 +41,21 @@
     background: white;
     max-width: 35rem;
     overflow-wrap: break-word;
+    transition: all 0.5s ease;
+}
+#not_left{
+    font-family: Open Sans;
+    background: black;
+    color: white;
+    font-style: normal;
+    padding: 0.6rem;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    margin: 0.1rem;
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    max-width: 35rem;
+    overflow-wrap: break-word;
+    transition: all 0.5s ease;
 }

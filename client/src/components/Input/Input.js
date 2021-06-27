@@ -4,7 +4,18 @@ import './Input.css';
 
 class Input extends React.Component{
 
-    state = {term: '', disabled: false};
+    state = {term: '', disabled: false, className: 'ui input'};
+
+    giveClassName = () => {
+        if(this.props.divId === 'not_div')
+        {
+            return 'not ui input';
+        }
+        else
+        {
+            return 'ui input';
+        }
+    }
 
     onInputChange = (event) =>{
 
@@ -38,7 +49,7 @@ class Input extends React.Component{
     render(){
         return(
             <form onSubmit={this.onFormSubmit}>
-                <input disabled = {(this.state.disabled)? "disabled" : ""} className="ui input" value={this.state.term} placeholder="Type a message" onChange={this.onInputChange}/>
+                <input disabled = {(this.state.disabled)? "disabled" : ""} className={this.giveClassName()} value={this.state.term} placeholder="Type a message" onChange={this.onInputChange}/>
                 <button id="emoji" className="ui button">emoji</button>
             </form>
         )

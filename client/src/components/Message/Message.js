@@ -1,10 +1,20 @@
 import React from 'react';
 import './Message.css';
 
-const Message = ({id, message: {text, user}}) => {
+const Message = ({divId, id, message: {text, user}}) => {
 
     let isSentByCurrentUser = false;
 
+   const giveId = () => {
+      if(divId === 'not_div')
+      {
+         return 'not_left';
+      }
+      else
+      {
+         return 'left';
+      }
+   }
 
     if(user===id)
     {
@@ -21,7 +31,7 @@ const Message = ({id, message: {text, user}}) => {
                </div>
             ): (
                <div className="other">
-                  <p id="left">{text}</p>
+                  <p id={giveId()}>{text}</p>
                </div>
             )}
         </div>   

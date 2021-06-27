@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 
 
 
-const Messages = ({b, id, messages}) => {
+const Messages = ({divId, id, messages}) => {
     
 
   const messagesEndRef = useRef(null)
@@ -22,7 +22,7 @@ const Messages = ({b, id, messages}) => {
   return(
       <div className="ScrollToBottom">
           {messages.map((message, i) => 
-              <div key={i}><Message id={id} message={message}/></div>
+              <div key={i}><Message divId={divId} id={id} message={message}/></div>
           )}
           {/* <div id="typing">
               {(b)? (<div>Stranger is Typing...</div>): null}
