@@ -3,7 +3,15 @@ img{
     height: 35rem;    
 }
 
-.first,.second,.third{
+.first,.third{
+    margin-top: 15rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+
+.second{
     margin-top: 15rem;
     display: flex;
     justify-content: space-between;
@@ -11,7 +19,7 @@ img{
 }
 
 .first{
-    margin-top: 5rem;
+    margin-top: 4rem;
 }
 
 h3{
@@ -31,12 +39,13 @@ h3{
     line-height: 2.5rem;
     padding-right: 10rem;
     color: #787878;
-}
-
-.content_head{
-    align-self: center;
     width: 50rem;
 }
+
+.content.h3{
+    width: 50rem;
+}
+
  
 * {
     box-sizing: border-box;
@@ -45,27 +54,14 @@ h3{
     font-family: 'PT Sans', sans-serif;
   }
 
-  .firstImage,.secondImage,.thirdImage,
-  .firstCont,.secondCont,.thirdCont{
-    display: flex;
-    justify-content: center;
-  }
-  
-
 
   @media screen and (max-width: 960px){
-    .first,.third{
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-    }
-    .second{
+
+    .first,.second,.third{
         justify-content: center;
     }
 
     .firstImage,.thirdImage{
         padding-top: 4rem;
     }
-
-
   }

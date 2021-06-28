@@ -14,10 +14,9 @@ input.ui.input:focus{
     font-weight: normal;
     font-size: 1.3rem;
     line-height: 3rem;
-
-
     color: #A7A7A7;
 }
+
 input.ui.input{
     width: 67rem;
     background: #F0F0F0;
