@@ -53,7 +53,8 @@ const Chat = ({location}) => {
             setWaitMessage(data.text);
             console.log(code);
         });
-    }, [ENDPOINT, location.search]);
+    }, [ENDPOINT]);
+    // location.search
 
     useEffect(() => {
         if(end===true)
