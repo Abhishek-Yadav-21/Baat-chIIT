@@ -7,6 +7,7 @@ import Bars from './Assets/bars.svg'
 
 
 function Navbar() {
+
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
   const [navbar, setNavbar] = useState(false);
@@ -56,7 +57,7 @@ function Navbar() {
             Chat<span>IIT</span>
             <i className='fab fa-typo3' />
           </Link>
-          </div>            
+          </div>
           <div className='menu-icon' onClick={closeMobileMenu}>
             <i className= 'fas fa-times'/>
           </div>

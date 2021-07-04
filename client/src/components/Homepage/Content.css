@@ -65,3 +65,10 @@ h3{
         padding-top: 4rem;
     }
   }
+
+  @media screen and (max-width: 460px){
+    img{
+        width: 90vw;
+    }
+  }
+ 

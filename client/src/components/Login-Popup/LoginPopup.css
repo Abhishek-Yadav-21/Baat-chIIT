@@ -121,7 +121,7 @@ div.content{
     height: 5.5rem;
     width: 25rem;
     border-radius: 5rem;
-    background: linear-gradient(92.54deg, #3A41C6 -0.34%, #3D3BBB 24.22%, #4634A7 51.4%, #4C2C96 77.53%, #512888 100%);
+    background: linear-gradient(87.29deg, #3B41C5 0%, #51298B 100%);
     font-family: Open Sans;
     font-style: normal;
     font-weight: 600;
@@ -130,6 +130,12 @@ div.content{
     padding: 1rem;
     color: white;
 }    
+
+#getStarted:hover{
+     background: linear-gradient(87.29deg, #51298B 0%,  #3B41C5 100%);
+     opacity: 0.9;
+     transition: opacity 0.5s ease;
+}
 
 #logIn{
     padding-top: 1.2rem;
@@ -172,21 +178,4 @@ div.content{
     }
 }
 
-#logout{
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background: black;
-    border-radius: 4px;
-    color: white;
-    font-weight: bold;
-}
-
-#not_logout{
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background: #F0F0F0;
-    border-radius: 4px;
-    color: black;
-    font-weight: bold;
-}
 

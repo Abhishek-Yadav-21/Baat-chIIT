@@ -1,14 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {io} from 'socket.io-client';
-import NavChat from './NavChat/NavChat';
+import NavChatNew from './NavChat/NavChatNew';
 import './Chat.css';
 import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
-import Wait1 from './Assets/wait1.svg';
-import Wait2 from './Assets/wait.svg';
-import Wait3 from './Assets/wait2.svg';
 import FindButton from './FindButton/FindButton';
 import IsTyping from '../IsTyping/IsTyping';
+import WaitMessage from '../waitMessage/WaitMessage';
+
 
 let socket;
 var id;
@@ -113,41 +112,24 @@ const Chat = ({location}) => {
         }
     }
 
-    const logo = () => {
-
-        if(waitMessage==="You are now chatting with a Stranger!"){
-            return Wait2;
-        }
-        else if(waitMessage === "Stranger has left the chat" || waitMessage==="You have left the chat")
-        {
-            return Wait3;
-        }
-        else{
-            return Wait1;
-        }
-
-    }   
-    
 
     console.log(message, messages);
 
     return(
         <div id={divId}>
-            <NavChat dark_mode={dark_mode}/>
-            <div className="ui container">
+            <NavChatNew dark_mode={dark_mode}/>
+            <div id="container" >
+                <div id="findButton_m">
+                    <FindButton find={find} setFind={setFind} end={end} setEnd={setEnd} bcode={bcode} setBcode={setBcode}/>
+                </div>
                 <div className="space1">
                     <div id={spaceLeft}>
-                        <div id="waitMessage">
-                            {waitMessage}
-                            <div>
-                                <img className="waitLogo" src={logo()} />
-                            </div>
-                        </div>
+                        <WaitMessage waitMessage={waitMessage}/>
                     </div>
                     <div id={spaceRight}>
                         <div>
-                            <Messages divId={divId} id={id} messages={messages}/>
-                            <IsTyping b={b}/>
+                            <Messages divId={divId} id={id} messages={messages} waitMessage={waitMessage}/>
+                            <IsTyping  b={b}/>
                         </div>
                     </div>
                 </div>
@@ -157,7 +139,7 @@ const Chat = ({location}) => {
                             <FindButton find={find} setFind={setFind} end={end} setEnd={setEnd} bcode={bcode} setBcode={setBcode}/>
                         </div>
                     </div>
-                    <div className="space1">
+                    <div className="spaceInput">
                         <Input divId={divId} typing={typing} setTyping={setTyping} code={code} setCode={setCode} message={message} setMessage={setMessage} />
                     </div>
                 </div>

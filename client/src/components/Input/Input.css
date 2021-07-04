@@ -1,9 +1,10 @@
 #emoji{
-    margin-left: 2.2rem;
+    margin-left: 1vw;
     background: #F0F0F0;
     border-radius: 100rem;
     height: 3.5rem;
 }
+
 input.ui.input:focus{
     outline: none;
 }
@@ -18,7 +19,7 @@ input.ui.input:focus{
 }
 
 input.ui.input{
-    width: 67rem;
+    width: 48vw;
     background: #F0F0F0;
     border-radius: 4.5rem;
     border: none;
@@ -33,7 +34,7 @@ input.ui.input{
 }
 
 input.not.ui.input{
-    width: 67rem;
+    width: 48vw;
     background: #181818;
     color: white;
     border-radius: 4.5rem;
@@ -46,4 +47,15 @@ input.not.ui.input{
     line-height: 2rem;
     padding-left: 2rem;
     transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 500px){
+    input.not.ui.input,input.ui.input{
+        width: 74vw;
+    }
+
+    #emoji{
+        margin-left:1vw ;
+    }
+
 }

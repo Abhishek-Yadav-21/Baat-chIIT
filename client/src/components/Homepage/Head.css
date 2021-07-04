@@ -4,7 +4,7 @@ html, body{
 } 
 
 
-div.heading {
+/* div.heading {
     display: flex;
     justify-content: center;
     font-family: Montserrat;
@@ -15,9 +15,9 @@ div.heading {
     color: white;
     padding-top: 3rem;
     
-}
+} */
 
-div.desc{
+/* div.desc{
     display: flex;
     justify-content: center;
     font-family: Open Sans;
@@ -26,7 +26,7 @@ div.desc{
     font-size: 2.2rem;
     line-height: 4.4rem;
     color: #FFFFFF;
-}
+} */
 
 .button{
     display: flex;
@@ -61,6 +61,7 @@ div.desc{
     object-fit: contain;
     box-shadow: 20px 0 20px  #474747;
     background-attachment: fixed;
+    background-position: bottom;
   }
   
   .head-container > h1 {
@@ -79,7 +80,7 @@ div.desc{
     color: #fff;
     margin-top: 0;
     font-size: 23px;
-    margin-bottom: 10rem;  
+    margin-bottom: 7rem;  
   }
   
 
