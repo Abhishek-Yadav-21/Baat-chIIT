@@ -44,7 +44,7 @@ const LoginPopup = (props) => {
         </Button>
         <h4 className="ui header">Awesome<img id="yo" src={Yo} /></h4>
         <p id="text">By registering you agree to our terms and services and our privacy policy.</p>
-        <a id="modal-login-google" name="login google" href="/auth/google" className="ui button icon-box google" role="button"><img id="logo" src={Google} />Continue with GSuite ID</a>
+        <a id="modal-login-google" name="login google" href="/auth/google" className="ui button icon-box google" role="button"><img id="logox" src={Google} />Continue with GSuite ID</a>
         <h6 className="bottom-notice">{props.text} <a href="/auth/google"><span>{props.link}</span></a></h6>
         </Modal.Content>
       </Modal>
