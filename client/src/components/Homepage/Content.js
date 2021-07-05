@@ -11,8 +11,9 @@ function Content() {
 
                     <div className="first">                                             
                         <div className="content">
-                            <h3>Random video calls</h3>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            <h3>Baat-ChIIT for everyone:</h3>
+                            If you're an introvert, welcome to the world of no-hesitation talks and no-judgement talks!<br/>
+                            If you're an extrovert, hail the lord for so many people around to talk! 
                         </div>
                         <div className="firstImage"> 
                             <img src={First}/>
@@ -22,7 +23,9 @@ function Content() {
                     <div className="second">                                                   
                         <div className="content ">
                             <h3>Experience security</h3>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            1. No collection of data, perfectly anonymous experience<br/>
+                            2. No usage of G-Suite ID other than verification of your identity as an IITian<br/>
+                            3. Secure connection; what you talk about here stays here!
                         </div>                    
                         <div className="secondImage">
                             <img src={Second}/>
@@ -31,8 +34,8 @@ function Content() {
 
                     <div className="third">                        
                         <div className="content">
-                            <h3>Chat with strangers</h3>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            <h3>Chat as strangers</h3>
+                            Find your interest-twins or brain-mates among fellow IITians! Have a chit-chat as strangers, without being judged.
                         </div>                        
                         <div className="thirdImage">
                             <img src={Third}/>
