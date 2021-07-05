@@ -34,7 +34,7 @@ class App  extends Component {
     render(){
         return(
             <BrowserRouter>
-                <Route path="/" exact component={Home}/>
+                <Route path="/" exact component={this.state.component}/>
                 <Route path = "/chat" exact component={this.state.component} />
             </BrowserRouter>
         );

@@ -9,6 +9,9 @@ class NavChatNew extends React.Component {
 
     state = {div_id: 'all', chath3: 'chath3', logout: 'logout', mode: false, click: false, bars: true}
 
+    componentDidMount(){
+        this.onClickHandler();
+    }
    onClickHandler = () => {
         this.setState({ mode: !this.state.mode });
        if(this.state.mode){
@@ -70,7 +73,7 @@ class NavChatNew extends React.Component {
                     className='nav-links2'
                     onClick={this.closeMobileMenu}
                     >
-                        <button id={this.state.logout}>LogOut</button>
+                        <button id={this.state.logout}><a href='/api/logout'>LogOut</a></button>
                    </div>
                 </li>
 

@@ -34,12 +34,18 @@
     justify-content: space-between;
     flex-wrap: wrap;    
 }
-
 #typing{
     display: flex;
     justify-content: center;
     font-size: 1.3rem;
     width: 56vw;
+}
+#not_typing{
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
+    width: 56vw;
+    color: white;
 }
 
 #findButton{

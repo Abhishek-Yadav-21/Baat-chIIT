@@ -130,7 +130,7 @@ const Chat = ({location}) => {
                     <div id={spaceRight}>
                         <div>
                             <Messages divId={divId} id={id} messages={messages} waitMessage={waitMessage}/>
-                            <IsTyping  b={b}/>
+                            <IsTyping divId={divId} b={b}/>
                         </div>
                     </div>
                 </div>
