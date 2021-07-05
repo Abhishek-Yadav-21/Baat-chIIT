@@ -50,7 +50,7 @@ class Input extends React.Component{
         return(
             <form onSubmit={this.onFormSubmit}>
                 <input disabled = {(this.state.disabled)? "disabled" : ""} className={this.giveClassName()} value={this.state.term} placeholder="Type a message" onChange={this.onInputChange}/>
-                <button id="emoji" className="ui button">emoji</button>
+                <button onClick={this.onFormSubmit} id="emoji" className="ui button">emoji</button>
             </form>
         )
     }
