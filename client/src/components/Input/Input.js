@@ -1,6 +1,7 @@
 import React from 'react'
 import debounce from 'lodash/debounce';
 import './Input.css';
+import Send from './Assets/Send.svg';
 
 class Input extends React.Component{
 
@@ -50,7 +51,7 @@ class Input extends React.Component{
         return(
             <form onSubmit={this.onFormSubmit}>
                 <input disabled = {(this.state.disabled)? "disabled" : ""} className={this.giveClassName()} value={this.state.term} placeholder="Type a message" onChange={this.onInputChange}/>
-                <button onClick={this.onFormSubmit} id="emoji" className="ui button">emoji</button>
+                <button onClick={this.onFormSubmit} id="emoji" ><img id="send" src={Send}/></button>
             </form>
         )
     }

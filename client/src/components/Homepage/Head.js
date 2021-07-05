@@ -4,6 +4,8 @@ import './Head.css';
 import LoginPopup from '../Login-Popup/LoginPopup'; 
 
 
+
+
 function Head() {
   
   const [offsetY, setOffsetY] = useState(0);
@@ -23,7 +25,7 @@ function Head() {
     <div>   
     <div style={{ transform: `translateY(-${offsetY * 0.4}px)` }} className='head-container' > 
       <h1>UNWIND YOURSELF</h1>
-      <p>Come have a chat with Machau, Ghissu, Despo, and Bakchod peeps.</p>
+      <p>Welcome to the world of conversing without hesitation and judgement.</p>
       <div>
           <div>
             <LoginPopup id="getStarted" text="Already have an account?" link="Log In" name="Get Started"/>

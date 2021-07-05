@@ -143,6 +143,22 @@ span{
   color:white;
 }
 
+#darkIcon{
+  cursor: pointer;
+}
+
+#day,#night{
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer;
+}
+
+#logo2{
+  height: 5rem;
+  width: 14rem;
+  background-color: black;
+  border-radius: 5px;
+}
 
 @media screen and (max-width: 960px) {
   .NavbarItems2 {
@@ -243,6 +259,10 @@ span{
     background: #fff;
     color: #242424;
     transition: 250ms;
+  }
+  #logo2{
+    height: 2rem;
+    width: 7rem;
   }
 }
 

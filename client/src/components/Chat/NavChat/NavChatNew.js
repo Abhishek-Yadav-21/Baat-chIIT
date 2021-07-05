@@ -1,8 +1,11 @@
 import React from 'react';
 import './NavChatNew.css';
 import './NavChatNew.css';
-import BarsBlack from './Assets/barsBlack.svg'
-import Bars from './Assets/bars.svg'
+import BarsBlack from './Assets/barsBlack.svg';
+import Bars from './Assets/bars.svg';
+import Day from './Assets/Day1.png';
+import Night from './Assets/Night1.png';
+import Logo from './Assets/Logo1.png';
 
 
 class NavChatNew extends React.Component {
@@ -42,8 +45,7 @@ class NavChatNew extends React.Component {
         <nav className='navbar2'>
           <div className='navbar-container2'>
             <div className='navbar-logo2' onClick={this.closeMobileMenu}>
-                <span>ChatIIT</span>
-               <i id={this.state.bars ? 'BfabIcon': 'WfabIcon'} className='fab fa-typo3' />
+                <img id="logo2" src={Logo}/>
             </div>
             <div className='menu-icon2' onClick={this.handleClick}>
                {this.state.bars ? <img className='bars2' src={BarsBlack}/> : <img className='bars2' src={Bars}/>}
@@ -52,7 +54,7 @@ class NavChatNew extends React.Component {
             <ul id= {this.state.bars ? 'WhiteBg' : 'BlackBg'} className={this.state.click ? 'nav-menu active2' : 'nav-menu2'}>          
                 <div className='mobileHead2 nav-item2'>
                     <div  className='navbar-logo2' onClick={this.closeMobileMenu}>
-                         <span>ChatIIT</span>
+                    <span>Baat-ChIIT</span>
                          <i id={this.state.bars ? 'BfabIcon': 'WfabIcon'} className='fab fa-typo3' />
                     </div>
                 </div> 
@@ -64,7 +66,7 @@ class NavChatNew extends React.Component {
                    <div
                     className='nav-links2'                   
                     >
-                     {this.state.mode ? <img className='bars2' onClick={this.onClickHandler} src={BarsBlack}/> : <img className='bars2' onClick={this.onClickHandler} src={Bars}/>}
+                     {this.state.mode ? <img id="night" onClick={this.onClickHandler} src={Night}/> : <img id="day"  onClick={this.onClickHandler} src={Day}/>}
                    </div>
                 </li>
 

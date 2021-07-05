@@ -104,6 +104,12 @@
   .mobileHead{
     display: none;
   }
+  
+  #logo{
+    height: 5rem;
+    width: 15rem;
+  }
+
 
   @media screen and (max-width: 960px) {
     .NavbarItems {
@@ -194,5 +200,10 @@
       background: #fff;
       color: #242424;
       transition: 250ms;
+    }
+
+    #logo{
+      height: 2rem;
+      width: 7rem;
     }
   }

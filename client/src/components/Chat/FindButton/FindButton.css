@@ -32,7 +32,7 @@ button.ui.button.find{
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: 0.2rem;
-    background: #461EB8;
+    background: linear-gradient(87.29deg, #3B41C5 0%, #51298B 100%);
     border-radius: 0.5rem;
     /* identical to box height */
 

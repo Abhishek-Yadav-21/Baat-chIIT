@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './NavbarNew.css';
 import LoginPopup from '../Login-Popup/LoginPopup';
 import Bars from './Assets/bars.svg'
+import Logo from './Assets/Logo1.png';
 
 
 function Navbar() {
@@ -44,8 +45,7 @@ function Navbar() {
       <nav className={navbar ? 'navbar active':'navbar'}>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            Chat<span>IIT</span>
-            <i className='fab fa-typo3' />
+            <img id="logo" src={Logo}/>
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <img className="bars" src={Bars}/>
@@ -54,7 +54,7 @@ function Navbar() {
           
           <div className='mobileHead nav-item'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            Chat<span>IIT</span>
+            Baat-Ch<span>IIT</span>
             <i className='fab fa-typo3' />
           </Link>
           </div>
