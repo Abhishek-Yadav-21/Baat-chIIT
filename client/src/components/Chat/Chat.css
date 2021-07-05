@@ -184,6 +184,9 @@ img.waitLogo{
     #typing{
         width: 100vw;
     }
+    #not_typing{
+        width: 100vw;
+    }
     
 }
 
