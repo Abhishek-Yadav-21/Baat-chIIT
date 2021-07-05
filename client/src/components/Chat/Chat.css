@@ -139,20 +139,20 @@ img.waitLogo{
     #space_right{
         border-radius: 0 ;
         width: 100vw;
-        height: 74.5vh;
+        height: 73vh;
         background: #F0F0F0;
         transition: all 0.5s ease;
-        margin-top: 0.6vh;
+        margin-top: 2vh;
     }
     
     
     #not_space_right{
         width: 100vw;
-        height: 71vh;
+        height: 73vh;
         background: #181818;
         border-radius: 0;
         transition: all 0.5s ease;
-        margin-top: 0.6vh;
+        margin-top: 2vh;
     }
     
     .space2{

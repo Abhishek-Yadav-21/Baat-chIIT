@@ -22,7 +22,7 @@ function Head() {
   return (
     <div>   
     <div style={{ transform: `translateY(-${offsetY * 0.4}px)` }} className='head-container' > 
-      <h1>Omegle for IITians</h1>
+      <h1>UNWIND YOURSELF</h1>
       <p>Come have a chat with Machau, Ghissu, Despo, and Bakchod peeps.</p>
       <div>
           <div>
