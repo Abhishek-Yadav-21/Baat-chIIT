@@ -123,6 +123,8 @@ img.waitLogo{
     display: none;
 }
 
+                                  /*MEDIA QUERIES*/
+
 @media screen and (max-width: 560px) {
 
     #container{
@@ -134,7 +136,8 @@ img.waitLogo{
     #findButton_m{
         display:flex;
         justify-content: center;
-        width: 100vw;
+        width: 100vw; 
+        position: fixed;                        /* changed*/
         /* margin-top: 1vh; */
     }
 
@@ -145,20 +148,20 @@ img.waitLogo{
     #space_right{
         border-radius: 0 ;
         width: 100vw;
-        height: 73vh;
+        height: 73%;                             /* changed*/
         background: #F0F0F0;
         transition: all 0.5s ease;
-        margin-top: 2vh;
-    }
+        margin-top: 2%;                          /* changed*/
+    } 
     
     
     #not_space_right{
         width: 100vw;
-        height: 73vh;
+        height: 73%;                             /* changed*/
         background: #181818;
         border-radius: 0;
         transition: all 0.5s ease;
-        margin-top: 2vh;
+        margin-top: 2%;                          /* changed*/
     }
     
     .space2{
