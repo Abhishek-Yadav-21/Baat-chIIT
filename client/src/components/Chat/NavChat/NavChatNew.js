@@ -46,12 +46,8 @@ class NavChatNew extends React.Component {
         <nav className='navbar2'>
           <div className='navbar-container2'>
             <div className='navbar-logo2' onClick={this.closeMobileMenu}>
-<<<<<<< HEAD
-                <img id="logo2" alt="logo" src={Logo}/>
-=======
                 {/* <img id="logo2" src={Logo}/> */}
-                {this.state.mode ? <img id="logo2" src={LogoDark}/> : <img id="logo2" src={Logo}/>}
->>>>>>> a3d7ac7f919fe7e8611f2f1cbd736ed0f22f1aa7
+                {this.state.mode ? <img alt="logo" id="logo2" src={LogoDark}/> : <img alt="logo" id="logo2" src={Logo}/>}
             </div>
             <div className='menu-icon2' onClick={this.handleClick}>
                {this.state.bars ? <img alt="bars" className='bars2' src={BarsBlack}/> : <img alt="bars" className='bars2' src={Bars}/>}
@@ -60,7 +56,7 @@ class NavChatNew extends React.Component {
             <ul id= {this.state.bars ? 'WhiteBg' : 'BlackBg'} className={this.state.click ? 'nav-menu active2' : 'nav-menu2'}>          
                 <div className='mobileHead2 nav-item2'>
                     <div  className='navbar-logo2' onClick={this.closeMobileMenu}>
-                    {this.state.mode ? <img id="logo2" src={LogoDark}/> : <img id="logo2" src={Logo}/>}
+                    {this.state.mode ? <img alt="logo" id="logo2" src={LogoDark}/> : <img alt="logo" id="logo2" src={Logo}/>}
                     </div>
                 </div> 
                 <div className='menu-icon2' onClick={this.closeMobileMenu}>

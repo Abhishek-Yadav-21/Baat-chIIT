@@ -14,7 +14,17 @@ var id;
 var arr = [];
 
 const Chat = ({location}) => {
-    const ENDPOINT = 'http://localhost:5000';
+
+    var ENDPOINT = '';
+    if(process.env.NODE_ENV === 'production')
+    {
+        ENDPOINT = 'https://nameless-bayou-10689.herokuapp.com/';
+    }
+    else{
+        ENDPOINT = 'http://localhost:5000';
+    }
+    
+    // const ENDPOINT = 'http://localhost:5000';
 
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
@@ -30,6 +40,7 @@ const Chat = ({location}) => {
     const [spaceRight, setSpceRight] = useState('space_right');
 
     useEffect(() => {
+       
         socket = io(ENDPOINT);
 
         socket.on('conn', (data) => {

@@ -55,7 +55,7 @@ function Navbar() {
           
           <div className='mobileHead nav-item'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-          <img id="logo" src={Logo}/>
+          <img alt="logo" id="logo" src={Logo}/>
           </Link>
           </div>
           <div className='menu-icon' onClick={closeMobileMenu}>
