@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from './Button';
+// import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './NavbarNew.css';
 import LoginPopup from '../Login-Popup/LoginPopup';
@@ -10,6 +10,7 @@ import Logo from './Assets/Logo1.png';
 function Navbar() {
 
   const [click, setClick] = useState(false);
+  // eslint-disable-next-line
   const [button, setButton] = useState(true);
   const [navbar, setNavbar] = useState(false);
 
@@ -45,10 +46,10 @@ function Navbar() {
       <nav className={navbar ? 'navbar active':'navbar'}>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            <img id="logo" src={Logo}/>
+            <img alt="brand-logo" id="logo" src={Logo}/>
           </Link>
           <div className='menu-icon' onClick={handleClick}>
-            <img className="bars" src={Bars}/>
+            <img alt="bars" className="bars" src={Bars}/>
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           

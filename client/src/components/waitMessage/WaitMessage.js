@@ -30,7 +30,7 @@ function WaitMessage({waitMessage}) {
             <div id="waitMessage">
                 {waitMessage}
                 <div>
-                   <img className="waitLogo" src={logo()} />
+                   <img alt="waiting logo" className="waitLogo" src={logo()} />
                 </div>
             </div>
         </div>

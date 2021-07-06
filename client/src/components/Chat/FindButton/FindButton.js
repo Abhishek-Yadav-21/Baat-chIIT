@@ -43,7 +43,7 @@ class FindButton extends React.Component {
         return (
             <div>
                 <button onClick={this.onClickHandler} className={this.state.className}>
-                    {(this.state.logo)? (<div>Find New<img id="find" src={Find} /></div>): (this.state.name) }
+                    {(this.state.logo)? (<div>Find New<img alt="find logo" id="find" src={Find} /></div>): (this.state.name) }
                 </button>
             </div>
         )

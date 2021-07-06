@@ -1,24 +1,24 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
-import {connect} from 'react-redux';
-import * as actions from './actions';
+// import {connect} from 'react-redux';
+// import * as actions from './actions';
 
 import Home from './components/Homepage/Home';
 import Chat from './components/Chat/Chat';
 import axios from 'axios';
 
-let isUserLoggedIn = false;
+// eslint-disable-next-line
+let isUserLoggedIn = false; 
 
 class App  extends Component {
 
     state = {component: ''};
 
     componentDidMount(){
-        // this.props.fetchUser();
-        // console.log(this.props.fetchUser());
+        
         axios.get('/api/current_user')
             .then(response => {
-                console.log(response);
+                // console.log(response);
                 if(response.data === ""){
                     this.setState({component: Home})
                     isUserLoggedIn = false;

@@ -24,6 +24,9 @@ const io = require('socket.io')(server, {
     origin: 'http://localhost:3000',
   }
 });
+// const io = require('socket.io')(server, {
+//   path: '/socket.io', // added this line of code
+// });
 
 app.use(passport.initialize());
 app.use(passport.session());

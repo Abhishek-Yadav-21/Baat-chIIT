@@ -33,7 +33,7 @@ const Chat = ({location}) => {
         socket = io(ENDPOINT);
 
         socket.on('conn', (data) => {
-            console.log(`You are now chatting with a random stranger !!`);
+            // console.log(`You are now chatting with a random stranger !!`);
             id = data.id;
             setWaitMessage(data.text);
             setMessages([]);
@@ -46,15 +46,15 @@ const Chat = ({location}) => {
             setBcode(text.bcode);
         })
         socket.on('disconn', (data) => {
-            console.log(data.id);
-            console.log(data.text);
+            // console.log(data.id);
+            // console.log(data.text);
             setCode(data.code);
             setBcode(data.bcode);
             setWaitMessage(data.text);
-            console.log(code);
+            // console.log(code);
         });
-    }, [ENDPOINT]);
-    // location.search
+    }, [ENDPOINT, location.search]);
+    
 
     useEffect(() => {
         if(end===true)
@@ -89,15 +89,16 @@ const Chat = ({location}) => {
             const addMessage = (message) => setMessages(state => [...state, message]);
             addMessage(message);
         })
+        //eslint-disable-next-line
     }, [arr]);
 
     useEffect(() => {
         if(message) {
-            socket.emit('sendMessage', message);
+            socket.emit('sendMessage', message, () => {setMessage('')});
         }
-        else{
-            console.log("no message");
-        }
+        // else{
+        //     console.log("no message");
+        // }
     }, [message]);
 
     const dark_mode = (event) => {
@@ -114,7 +115,7 @@ const Chat = ({location}) => {
     }
 
 
-    console.log(message, messages);
+    // console.log(message, messages);
 
     return(
         <div id={divId}>

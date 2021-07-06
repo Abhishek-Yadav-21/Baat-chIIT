@@ -51,7 +51,7 @@ class Input extends React.Component{
         return(
             <form onSubmit={this.onFormSubmit}>
                 <input disabled = {(this.state.disabled)? "disabled" : ""} className={this.giveClassName()} value={this.state.term} placeholder="Type a message" onChange={this.onInputChange}/>
-                <button onClick={this.onFormSubmit} id="emoji" ><img id="send" src={Send}/></button>
+                <button onClick={this.onFormSubmit} id="emoji" ><img alt="send-button" id="send" src={Send}/></button>
             </form>
         )
     }

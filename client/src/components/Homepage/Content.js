@@ -16,7 +16,7 @@ function Content() {
                             If you're an extrovert, hail the lord for so many people around to talk! 
                         </div>
                         <div className="firstImage"> 
-                            <img src={First}/>
+                            <img alt="vector1" src={First}/>
                         </div>
                     </div>
 
@@ -28,7 +28,7 @@ function Content() {
                             3. Secure connection; what you talk about here stays here!
                         </div>                    
                         <div className="secondImage">
-                            <img src={Second}/>
+                            <img alt="vector2" src={Second}/>
                         </div>
                     </div>
 
@@ -38,7 +38,7 @@ function Content() {
                             Find your interest-twins or brain-mates among fellow IITians! Have a chit-chat as strangers, without being judged.
                         </div>                        
                         <div className="thirdImage">
-                            <img src={Third}/>
+                            <img alt="vector3" src={Third}/>
                         </div>
                     </div>
 

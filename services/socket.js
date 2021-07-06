@@ -13,6 +13,9 @@ const io = require('socket.io')(server, {
     origin: 'http://localhost:3000',
   }
 });
+// const io = require('socket.io')(server, {
+//   path: '/socket.io', // added this line of code
+// });
 
 
 var sockets = {},
@@ -87,10 +90,11 @@ module.exports = function(io) {
       }
     });
     
-    socket.on('sendMessage', (message) => {
+    socket.on('sendMessage', (message, callback) => {
       if (users[socket.id].connectedTo !== -1 && sockets[users[socket.id].connectedTo]) {
         sockets[users[socket.id].connectedTo].emit('message', {text: message, user: users[socket.id].connectedTo})
         sockets[socket.id].emit('message', {text: message, user: users[socket.id].connectedTo});
+        callback();
       }
     });
   

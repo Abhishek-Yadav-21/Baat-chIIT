@@ -25,7 +25,7 @@ class NavChatNew extends React.Component {
            this.props.dark_mode(this.state.mode);
            this.setState({div_id: 'all', chath3: 'chath3', logout: 'logout', bars: true});
        }
-       console.log(this.state.mode);
+    //    console.log(this.state.mode);
    }
     
 
@@ -45,10 +45,10 @@ class NavChatNew extends React.Component {
         <nav className='navbar2'>
           <div className='navbar-container2'>
             <div className='navbar-logo2' onClick={this.closeMobileMenu}>
-                <img id="logo2" src={Logo}/>
+                <img id="logo2" alt="logo" src={Logo}/>
             </div>
             <div className='menu-icon2' onClick={this.handleClick}>
-               {this.state.bars ? <img className='bars2' src={BarsBlack}/> : <img className='bars2' src={Bars}/>}
+               {this.state.bars ? <img alt="bars" className='bars2' src={BarsBlack}/> : <img alt="bars" className='bars2' src={Bars}/>}
             </div>
                   
             <ul id= {this.state.bars ? 'WhiteBg' : 'BlackBg'} className={this.state.click ? 'nav-menu active2' : 'nav-menu2'}>          
@@ -66,7 +66,7 @@ class NavChatNew extends React.Component {
                    <div
                     className='nav-links2'                   
                     >
-                     {this.state.mode ? <img id="night" onClick={this.onClickHandler} src={Night}/> : <img id="day"  onClick={this.onClickHandler} src={Day}/>}
+                     {this.state.mode ? <img alt="dark" id="night" onClick={this.onClickHandler} src={Night}/> : <img alt="light" id="day"  onClick={this.onClickHandler} src={Day}/>}
                    </div>
                 </li>
 
