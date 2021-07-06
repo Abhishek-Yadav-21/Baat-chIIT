@@ -38,7 +38,6 @@ li.ui.toggle.checkbox{
   color: #fff;
   justify-self: start;
   margin-left: 20px;
-  cursor: pointer;
   text-decoration: none;
   font-size: 3rem;
   display: flex;
@@ -154,10 +153,8 @@ span{
 }
 
 #logo2{
-  height: 5rem;
-  width: 14rem;
-  background-color: black;
-  border-radius: 5px;
+  height: 4rem;
+  width: 13rem;
 }
 
 @media screen and (max-width: 960px) {
@@ -261,7 +258,7 @@ span{
     transition: 250ms;
   }
   #logo2{
-    height: 2rem;
+    height: 2.2rem;
     width: 7rem;
   }
 }
