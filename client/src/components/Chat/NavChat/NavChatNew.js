@@ -6,6 +6,7 @@ import Bars from './Assets/bars.svg';
 import Day from './Assets/Day1.png';
 import Night from './Assets/Night1.png';
 import Logo from './Assets/Logo1.png';
+import LogoDark from './Assets/LogoDark.png';
 
 
 class NavChatNew extends React.Component {
@@ -45,7 +46,8 @@ class NavChatNew extends React.Component {
         <nav className='navbar2'>
           <div className='navbar-container2'>
             <div className='navbar-logo2' onClick={this.closeMobileMenu}>
-                <img id="logo2" src={Logo}/>
+                {/* <img id="logo2" src={Logo}/> */}
+                {this.state.mode ? <img id="logo2" src={LogoDark}/> : <img id="logo2" src={Logo}/>}
             </div>
             <div className='menu-icon2' onClick={this.handleClick}>
                {this.state.bars ? <img className='bars2' src={BarsBlack}/> : <img className='bars2' src={Bars}/>}
@@ -54,8 +56,7 @@ class NavChatNew extends React.Component {
             <ul id= {this.state.bars ? 'WhiteBg' : 'BlackBg'} className={this.state.click ? 'nav-menu active2' : 'nav-menu2'}>          
                 <div className='mobileHead2 nav-item2'>
                     <div  className='navbar-logo2' onClick={this.closeMobileMenu}>
-                    <span>Baat-ChIIT</span>
-                         <i id={this.state.bars ? 'BfabIcon': 'WfabIcon'} className='fab fa-typo3' />
+                    {this.state.mode ? <img id="logo2" src={LogoDark}/> : <img id="logo2" src={Logo}/>}
                     </div>
                 </div> 
                 <div className='menu-icon2' onClick={this.closeMobileMenu}>
