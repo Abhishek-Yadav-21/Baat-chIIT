@@ -137,6 +137,7 @@ img.waitLogo{
        } 
 
     #container{
+        position: absolute;
         margin-left: 0;
         margin-right: 0;
 
