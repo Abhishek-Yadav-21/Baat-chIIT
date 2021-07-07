@@ -7,12 +7,11 @@ import Footer from '../Footer/Footer';
 
 function Home() {
   return (
-    <>   
-      <NavbarNew />
+    <div id="home">   
       <Head /> 
       <Content />
       <Footer />
-    </>
+    </div>
   );
 }
 
