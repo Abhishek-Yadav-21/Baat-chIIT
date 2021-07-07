@@ -127,13 +127,13 @@ img.waitLogo{
 
 @media screen and (max-width: 560px) {
 
-    /* html {
-        overflow: hidden;
-        width: 100%;
-      } */
+    html {
+        min-height: -webkit-fill-available;
+      }
       
       body {
         min-height: -webkit-fill-available;
+        min-height: 100vh;
        } 
 
     #container{
