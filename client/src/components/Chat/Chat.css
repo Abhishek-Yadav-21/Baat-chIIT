@@ -148,7 +148,7 @@ img.waitLogo{
     #space_right{
         border-radius: 0 ;
         width: 100vw;
-        height: 73%;                             /* changed*/
+        height: 100%;                             /* changed*/
         background: #F0F0F0;
         transition: all 0.5s ease;
         margin-top: 2%;                          /* changed*/
@@ -157,7 +157,7 @@ img.waitLogo{
     
     #not_space_right{
         width: 100vw;
-        height: 73%;                             /* changed*/
+        height: 100%;                             /* changed*/
         background: #181818;
         border-radius: 0;
         transition: all 0.5s ease;
