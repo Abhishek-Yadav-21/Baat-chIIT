@@ -7,7 +7,8 @@ import Footer from '../Footer/Footer';
 
 function Home() {
   return (
-    <div id="home">   
+    <div>   
+      <NavbarNew />
       <Head /> 
       <Content />
       <Footer />
