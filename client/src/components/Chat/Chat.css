@@ -127,7 +127,7 @@ img.waitLogo{
 
 @media screen and (max-width: 560px) {
 
-    html {
+    /* html {
         overflow: hidden;
         width: 100%;
       }
@@ -136,10 +136,10 @@ img.waitLogo{
         height: 100%;
         position: fixed;
         /* prevent overscroll bounce*/
-        overflow-y: scroll;
-        -webkit-overflow-scrolling: touch;
+        /* overflow-y: scroll; */
+        /* -webkit-overflow-scrolling: touch; */
         /* iOS velocity scrolling */
-      }
+      /* } */ */
 
     #container{
         margin-left: 0;
@@ -161,20 +161,20 @@ img.waitLogo{
     #space_right{
         border-radius: 0 ;
         width: 100vw;
-        height: 73vh;                             /* changed*/
+        height: 73%;                             /* changed*/
         background: #F0F0F0;
         transition: all 0.5s ease;
-        margin-top: 2vh;                          /* changed*/
+        margin-top: 2%;                          /* changed*/
     } 
     
     
     #not_space_right{
         width: 100vw;
-        height: 73vh;                             /* changed*/
+        height: 73%;                             /* changed*/
         background: #181818;
         border-radius: 0;
         transition: all 0.5s ease;
-        margin-top: 2vh;                          /* changed*/
+        margin-top: 2%;                          /* changed*/
     }
     
     .space2{
