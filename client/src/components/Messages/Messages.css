@@ -19,7 +19,7 @@
   @media screen and (max-width: 560px) {
     
     .ScrollToBottom {
-      height: 69%;                                  /*changed */
+      height: 69vh;                                  /*changed */
     }
 
     #waitTop{
