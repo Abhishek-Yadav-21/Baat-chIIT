@@ -2,12 +2,10 @@ import React from 'react';
 import './Messages.css';
 import Message from '../Message/Message';
 import { useEffect, useRef } from 'react';
-import Input from '../Input/Input';
-import IsTyping from '../IsTyping/IsTyping';
 
 
 
-const Messages = ({b, divId, id, messages, waitMessage, typing, setTyping, code, setCode, message, setMessage}) => {
+const Messages = ({divId, id, messages, waitMessage}) => {
   
   let temp = false;
   if(waitMessage === "Stranger has left the chat" || waitMessage === "You have left the chat")
@@ -36,10 +34,6 @@ const Messages = ({b, divId, id, messages, waitMessage, typing, setTyping, code,
               <div key={i}><Message divId={divId} id={id} message={message}/></div>
           )}          
           {temp ? (<div id="waitTop">{waitMessage}</div>) : null}
-          <IsTyping divId={divId} b={b}/>
-          <div id="chat_input" className="spaceInput">
-              <Input divId={divId} typing={typing} setTyping={setTyping} code={code} setCode={setCode} message={message} setMessage={setMessage} />
-          </div>
           <div ref={messagesEndRef} />
       </div>
   )

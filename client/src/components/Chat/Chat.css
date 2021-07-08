@@ -123,9 +123,6 @@ img.waitLogo{
     display: none;
 }
 
-#chat_input{
-    display: none;
-}
                                   /*MEDIA QUERIES*/
 
 @media screen and (max-width: 560px) {
@@ -142,19 +139,11 @@ img.waitLogo{
     height: 100%;
     width: 100%;
     }
-
-    #chat_input{
-        display: flex;
-    }
-
-    #chat_input_lap{
-        display: none;
-    }
     
     #div{
         width: 100%;
         height: 100%;
-        position: absolute;
+        position: fixed;
         overflow: hidden;
     }
 
@@ -162,45 +151,35 @@ img.waitLogo{
         width: 100%;
         height: 100%;
         position: fixed;
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: scroll;
     }
 
     #container{
-        /* position: relative; */
         position: fixed;
         margin-left: 0;
         margin-right: 0;
 
     }
 
-
     #findButton_m{
         display:flex;
-        /* position: fixed; */
         justify-content: center;
         width: 100vw;                      
         /* margin-top: 1vh; */
     }
 
     .space1{
-        position: fixed;
         width: 100vw;
-        /* display: flex;
-        flex-direction: column; */
-        /* position: relative; */
     }
     
     #space_right{
-        /* position: absolute; */
         border-radius: 0 ;
         width: 100vw;
-        height: 95vh;                             /* changed*/
+        height: 68vh;                             /* changed*/
         background: #F0F0F0;
         transition: all 0.5s ease;
         margin-top: 2vh;                          /* changed*/
-        /* display: flex;
-        flex-direction: column; */
-        position: fixed;
     } 
     
     
@@ -213,12 +192,12 @@ img.waitLogo{
         margin-top: 2vh;                          /* changed*/
     }
     
-    /* .space2{
+    .space2{
         display: flex;   
         justify-content: center;
         width: 100vw;
         
-    } */
+    }
     
     .spaceInput{
         display: flex;
@@ -241,4 +220,3 @@ img.waitLogo{
     }
     
 }
-
