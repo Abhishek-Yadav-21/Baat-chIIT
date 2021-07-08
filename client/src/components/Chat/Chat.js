@@ -143,9 +143,9 @@ const Chat = ({location}) => {
                         <div>
                             <Messages divId={divId} id={id} messages={messages} waitMessage={waitMessage}/>
                             <IsTyping divId={divId} b={b}/>
-                        </div>
-                        <div id="chat_input" className="spaceInput">
-                            <Input divId={divId} typing={typing} setTyping={setTyping} code={code} setCode={setCode} message={message} setMessage={setMessage} />
+                            <div id="chat_input" className="spaceInput">
+                                <Input divId={divId} typing={typing} setTyping={setTyping} code={code} setCode={setCode} message={message} setMessage={setMessage} />
+                            </div>
                         </div>
                     </div>
                 </div>
