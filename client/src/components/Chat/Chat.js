@@ -141,11 +141,11 @@ const Chat = ({location}) => {
                     </div>
                     <div id={spaceRight}>
                         <div>
-                            <Messages divId={divId} id={id} messages={messages} waitMessage={waitMessage}/>
+                            <Messages typing={typing} setTyping={setTyping} code={code} setCode={setCode} message={message} setMessage={setMessage} divId={divId} id={id} messages={messages} waitMessage={waitMessage}/>
                             <IsTyping divId={divId} b={b}/>
-                            <div id="chat_input" className="spaceInput">
+                            {/* <div id="chat_input" className="spaceInput">
                                 <Input divId={divId} typing={typing} setTyping={setTyping} code={code} setCode={setCode} message={message} setMessage={setMessage} />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
