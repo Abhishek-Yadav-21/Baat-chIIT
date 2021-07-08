@@ -20,6 +20,8 @@
     
     .ScrollToBottom {
       height: 64vh;                                  /*changed */
+      display: flex;    /* fwef */
+      flex-direction: column;     /*vdgs*/
     }
 
     #waitTop{

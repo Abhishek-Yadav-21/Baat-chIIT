@@ -167,6 +167,7 @@ img.waitLogo{
 
     #container{
         /* position: relative; */
+        position: fixed;
         margin-left: 0;
         margin-right: 0;
 
@@ -193,7 +194,7 @@ img.waitLogo{
         /* position: absolute; */
         border-radius: 0 ;
         width: 100vw;
-        height: 68vh;                             /* changed*/
+        height: 95vh;                             /* changed*/
         background: #F0F0F0;
         transition: all 0.5s ease;
         margin-top: 2vh;                          /* changed*/
