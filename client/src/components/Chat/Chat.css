@@ -198,8 +198,9 @@ img.waitLogo{
         background: #F0F0F0;
         transition: all 0.5s ease;
         margin-top: 2vh;                          /* changed*/
-        display: flex;
-        flex-direction: column;
+        /* display: flex;
+        flex-direction: column; */
+        position: fixed;
     } 
     
     
@@ -212,12 +213,12 @@ img.waitLogo{
         margin-top: 2vh;                          /* changed*/
     }
     
-    .space2{
+    /* .space2{
         display: flex;   
         justify-content: center;
         width: 100vw;
         
-    }
+    } */
     
     .spaceInput{
         display: flex;
