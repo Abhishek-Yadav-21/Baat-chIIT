@@ -144,6 +144,9 @@ const Chat = ({location}) => {
                             <Messages divId={divId} id={id} messages={messages} waitMessage={waitMessage}/>
                             <IsTyping divId={divId} b={b}/>
                         </div>
+                        <div id="chat_input" className="spaceInput">
+                            <Input divId={divId} typing={typing} setTyping={setTyping} code={code} setCode={setCode} message={message} setMessage={setMessage} />
+                        </div>
                     </div>
                 </div>
                 <div className="space2">
@@ -152,7 +155,7 @@ const Chat = ({location}) => {
                             <FindButton find={find} setFind={setFind} end={end} setEnd={setEnd} bcode={bcode} setBcode={setBcode}/>
                         </div>
                     </div>
-                    <div className="spaceInput">
+                    <div id="chat_input_lap" className="spaceInput">
                         <Input divId={divId} typing={typing} setTyping={setTyping} code={code} setCode={setCode} message={message} setMessage={setMessage} />
                     </div>
                 </div>
