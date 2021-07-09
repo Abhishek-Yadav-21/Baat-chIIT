@@ -8,6 +8,8 @@ import { useEffect, useRef } from 'react';
 const Messages = ({divId, id, messages, waitMessage}) => {
   
   let temp = false;
+  let height = window.innerHeight;
+  console.log(height);
   if(waitMessage === "Stranger has left the chat" || waitMessage === "You have left the chat")
   {
     temp = true;
@@ -24,7 +26,7 @@ const Messages = ({divId, id, messages, waitMessage}) => {
 
   useEffect(() => {
     scrollToBottom()
-  }, [messages]);
+  }, [messages, height]);
 
 
   return(
