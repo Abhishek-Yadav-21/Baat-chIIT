@@ -29,6 +29,9 @@
       color:#461EB8;
       height: 3vh;
     }
-
-
   }
+  @media screen and (max-height: 500px){
+    .ScrollToBottom{
+        height: 54vh;
+    }
+}
