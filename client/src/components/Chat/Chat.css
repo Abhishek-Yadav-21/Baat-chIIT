@@ -220,7 +220,7 @@ img.waitLogo{
     }
     
 }
-@media screen and (max-height: 500px){
+@media screen and (max-height: 600px){
     #space_right{
         height: 58vh;
     }

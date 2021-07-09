@@ -30,7 +30,7 @@
       height: 3vh;
     }
   }
-  @media screen and (max-height: 500px){
+  @media screen and (max-height: 600px){
     .ScrollToBottom{
         height: 54vh;
     }
