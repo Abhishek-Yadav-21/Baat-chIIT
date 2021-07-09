@@ -145,14 +145,15 @@ img.waitLogo{
         height: 100%;
         position: fixed;
         overflow: hidden;
+        transition: background 0.5s ease;
     }
 
     #not_div{
         width: 100%;
         height: 100%;
         position: fixed;
-        overflow-x: hidden;
-        overflow-y: scroll;
+        overflow:hidden;
+        transition: background 0.5s ease;
     }
 
     #container{
@@ -171,6 +172,7 @@ img.waitLogo{
 
     .space1{
         width: 100vw;
+        transition: background 0.5s ease;
     }
     
     #space_right{
@@ -180,6 +182,7 @@ img.waitLogo{
         background: #F0F0F0;
         transition: all 0.5s ease;
         margin-top: 2vh;                          /* changed*/
+        transition: background 0.5s ease;
     } 
     
     
@@ -190,6 +193,7 @@ img.waitLogo{
         border-radius: 0;
         transition: all 0.5s ease;
         margin-top: 2vh;                          /* changed*/
+        transition: background 0.5s ease;
     }
     
     .space2{
@@ -222,6 +226,9 @@ img.waitLogo{
 }
 @media screen and (max-height: 600px){
     #space_right{
+        height: 58vh;
+    }
+    #not_space_right{
         height: 58vh;
     }
 }
