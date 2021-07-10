@@ -37,7 +37,7 @@ const Messages = ({divId, id, messages, waitMessage}) => {
 
   console.log(height);
   return(
-      <div className="ScrollToBottom">
+      <div id="Scroll" className="ScrollToBottom">
         {temp ? null:  (<div id="waitTop">{waitMessage}</div>)}
           {messages.map((message, i) =>          
               <div key={i}><Message divId={divId} id={id} message={message}/></div>
