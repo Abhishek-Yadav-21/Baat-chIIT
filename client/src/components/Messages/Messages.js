@@ -7,13 +7,13 @@ import { useEffect, useRef } from 'react';
 
 const Messages = ({divId, id, messages, waitMessage}) => {
   
-  const [height, setHeight] = useState(window.innerHeight);
+  const [height, setHeight] = useState(null);
 
   // const handleScroll = () => setHeight(window.innerHeight);
 
   useEffect(() => {
-    const height = document.getElementById('Scroll').clientHeight;
-    setHeight(height);
+    const h = document.getElementById('Scroll').clientHeight;
+    setHeight(h);
   }, []);
 
   let temp = false;
