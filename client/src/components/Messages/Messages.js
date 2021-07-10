@@ -9,12 +9,11 @@ const Messages = ({divId, id, messages, waitMessage}) => {
   
   const [height, setHeight] = useState(window.innerHeight);
 
-  const handleScroll = () => setHeight(window.innerHeight);
+  // const handleScroll = () => setHeight(window.innerHeight);
 
   useEffect(() => {
-    window.addEventListener("resize", handleScroll);
-
-    return () => window.removeEventListener("resize", handleScroll);
+    const height = document.getElementById('Scroll').clientHeight;
+    setHeight(height);
   }, []);
 
   let temp = false;
@@ -38,7 +37,7 @@ const Messages = ({divId, id, messages, waitMessage}) => {
 
   console.log(height);
   return(
-      <div className="ScrollToBottom">
+      <div id="Scroll" className="ScrollToBottom">
         {temp ? null:  (<div id="waitTop">{waitMessage}</div>)}
           {messages.map((message, i) =>          
               <div key={i}><Message divId={divId} id={id} message={message}/></div>
