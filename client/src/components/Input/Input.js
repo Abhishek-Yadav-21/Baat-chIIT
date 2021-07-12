@@ -5,7 +5,7 @@ import Send from './Assets/Send.svg';
 
 class Input extends React.Component{
 
-    state = {term: '', disabled: false, className: 'ui input'};
+    state = {term: '', disabled: false, className: 'ui input', click: false};
 
     giveClassName = () => {
         if(this.props.divId === 'not_div')
@@ -16,6 +16,11 @@ class Input extends React.Component{
         {
             return 'ui input';
         }
+    }
+
+    onClickHandler = (event) => {
+        this.setState({click: !this.state.click});
+        this.props.scroll_effect(this.state.click);
     }
 
     onInputChange = (event) =>{
@@ -50,7 +55,7 @@ class Input extends React.Component{
     render(){
         return(
             <form onSubmit={this.onFormSubmit}>
-                <input disabled = {(this.state.disabled)? "disabled" : ""} className={this.giveClassName()} value={this.state.term} placeholder="Type a message" onChange={this.onInputChange}/>
+                <input onClick={this.onClickHandler} disabled = {(this.state.disabled)? "disabled" : ""} className={this.giveClassName()} value={this.state.term} placeholder="Type a message" onChange={this.onInputChange}/>
                 <button onClick={this.onFormSubmit} id="emoji" ><img alt="send-button" id="send" src={Send}/></button>
             </form>
         )

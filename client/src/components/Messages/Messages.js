@@ -5,16 +5,16 @@ import { useEffect, useRef } from 'react';
 
 
 
-const Messages = ({divId, id, messages, waitMessage}) => {
+const Messages = ({change, divId, id, messages, waitMessage}) => {
   
-  const [height, setHeight] = useState(null);
+  // const [height, setHeight] = useState(null);
 
   // const handleScroll = () => setHeight(window.innerHeight);
 
-  useEffect(() => {
-    const h = document.getElementById('Scroll').clientHeight;
-    setHeight(h);
-  }, []);
+  // useEffect(() => {
+  //   const h = document.getElementById('Scroll').clientHeight;
+  //   setHeight(h);
+  // }, []);
 
   let temp = false;
   if(waitMessage === "Stranger has left the chat" || waitMessage === "You have left the chat")
@@ -33,9 +33,9 @@ const Messages = ({divId, id, messages, waitMessage}) => {
 
   useEffect(() => {
     scrollToBottom()
-  }, [messages, height]);
+  }, [messages, change]);
 
-  console.log(height);
+  // console.log(height);
   return(
       <div id="Scroll" className="ScrollToBottom">
         {temp ? null:  (<div id="waitTop">{waitMessage}</div>)}

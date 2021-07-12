@@ -38,6 +38,7 @@ const Chat = ({location}) => {
     const [divId, setDivId] = useState('div');
     const [spaceLeft, setSpaceLeft] = useState('space_left');
     const [spaceRight, setSpceRight] = useState('space_right');
+    const [change, setChange] = useState(false);
 
     useEffect(() => {
        
@@ -125,6 +126,16 @@ const Chat = ({location}) => {
         }
     }
 
+    const scroll_effect = (event) => {
+        if(event)
+        {
+            setChange(!change);
+        }
+        else{
+            setChange(!change)
+        }
+    }
+
 
     // console.log(message, messages);
 
@@ -141,7 +152,7 @@ const Chat = ({location}) => {
                     </div>
                     <div id={spaceRight}>
                         <div>
-                            <Messages divId={divId} id={id} messages={messages} waitMessage={waitMessage}/>
+                            <Messages change={change} divId={divId} id={id} messages={messages} waitMessage={waitMessage}/>
                             <IsTyping divId={divId} b={b}/>
                         </div>
                     </div>
@@ -153,7 +164,7 @@ const Chat = ({location}) => {
                         </div>
                     </div>
                     <div className="spaceInput">
-                        <Input divId={divId} typing={typing} setTyping={setTyping} code={code} setCode={setCode} message={message} setMessage={setMessage} />
+                        <Input scroll_effect={scroll_effect} divId={divId} typing={typing} setTyping={setTyping} code={code} setCode={setCode} message={message} setMessage={setMessage} />
                     </div>
                 </div>
             </div>
