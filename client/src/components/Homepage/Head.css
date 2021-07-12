@@ -111,6 +111,7 @@ html, body{
     .head-container {
       background: url('./Assets/bg1.jpg') center center/cover no-repeat;
       background-attachment: fixed;
+      transform: none !important;
     }
 
 
