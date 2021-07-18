@@ -115,7 +115,7 @@ html, body{
       transform: none !important;
     }
     
-    #home_fix{
+    /* #home_fix{
       width: 100%;
       height: 100%;
       position: fixed;
@@ -123,11 +123,20 @@ html, body{
     }
     #home_fix::-webkit-scrollbar {
       display: none;
+    } */
+    html {
+      overflow: hidden;
+      width: 100%;
     }
-    body{
+    
+    body {
       height: 100%;
       width: 100%;
       position: fixed;
+      /* prevent overscroll bounce*/
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      /* iOS velocity scrolling */
     }
 
 
