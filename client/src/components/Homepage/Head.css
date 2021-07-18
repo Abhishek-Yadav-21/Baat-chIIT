@@ -112,11 +112,19 @@ html, body{
       background: url('./Assets/bg1.jpg') center center/cover no-repeat;
       background-attachment: fixed;
       transform: none !important;
-      /* height: 100vh; */
+      height: 1000px;
     }
 
-    #div_fix{
+    /* #home_fix{
       position: fixed;
+      height: 100%;
+    }
+    
+    html{
+      width: 100%;
+      height: 100vh;
+    } */
+    html, body{
       height: 100%;
     }
     
