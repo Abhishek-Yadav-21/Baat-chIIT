@@ -113,6 +113,21 @@ html, body{
       background-attachment: fixed;
       transform: none !important;
     }
+    body {
+      height: 100%;
+      width: 100%;
+      }
+      
+      #home_fix{
+          width: 100%;
+          height: 100%;
+          position: fixed;
+          overflow-x: hidden;
+          /* transition: background 0.5s ease; */
+      }
+      #home_fix::-webkit-scrollbar {
+        display: none;
+      }
 
 
     .head-container > h1 {

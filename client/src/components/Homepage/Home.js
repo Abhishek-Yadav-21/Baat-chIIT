@@ -9,9 +9,11 @@ function Home() {
   return (
     <div>   
       <NavbarNew />
-      <Head /> 
-      <Content />
-      <Footer />
+      <div id="home_fix">
+        <Head /> 
+        <Content />
+        <Footer />
+      </div>
     </div>
   );
 }

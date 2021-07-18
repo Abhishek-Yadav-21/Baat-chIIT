@@ -207,3 +207,8 @@
       width: 7rem;
     }
   }
+  @media screen and (max-width: 423px) {
+    .navbar{
+      background: black;
+    }
+  }
