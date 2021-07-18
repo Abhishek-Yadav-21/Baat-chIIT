@@ -8,8 +8,8 @@ import Footer from '../Footer/Footer';
 function Home() {
   return (
     <div>   
-      <NavbarNew />
       <div id="home_fix">
+        <NavbarNew />
         <Head /> 
         <Content />
         <Footer />
