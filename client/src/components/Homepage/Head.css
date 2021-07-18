@@ -115,7 +115,7 @@ html, body{
       background-size: cover;
       background-position: center;
       transform: none !important;
-      transition: height 999999s;
+      transition: background 999999s;
       /* background-attachment: fixed; */
     }
 
