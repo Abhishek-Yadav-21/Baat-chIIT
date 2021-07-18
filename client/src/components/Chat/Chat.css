@@ -135,15 +135,6 @@ img.waitLogo{
         -webkit-overflow-scrolling: touch;
         } */
 
-    body, html {
-    width: 100%;
-    overflow-y: scroll;
-    }
-    body{
-        height: 100%;
-        position: fixed;
-        /* overflow-y: scroll; */
-    }
     
     #div{
         width: 100%;

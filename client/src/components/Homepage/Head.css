@@ -115,15 +115,20 @@ html, body{
       transform: none !important;
     }
     
-      /* #home_fix{
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        overflow-y: auto;
-      }
-      #home_fix::-webkit-scrollbar {
-        display: none;
-      } */
+    #home_fix{
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      overflow-y: auto;
+    }
+    #home_fix::-webkit-scrollbar {
+      display: none;
+    }
+    body{
+      height: 100%;
+      width: 100%;
+      position: fixed;
+    }
 
 
     .head-container > h1 {
