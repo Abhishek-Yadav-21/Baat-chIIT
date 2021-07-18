@@ -6,6 +6,7 @@ import Footer from '../Footer/Footer';
 
 
 function Home() {
+  
   return (
     <div>   
       <div id="home_fix">
