@@ -115,7 +115,7 @@ html, body{
       background-size: cover;
       background-position: center;
       transform: none !important;
-      transition: background 999999s;
+      /* transition: background 999999s; */
       /* background-attachment: fixed; */
     }
 
@@ -190,4 +190,25 @@ html, body{
     .head-container > p {
         display: none;
       }
+  }
+
+  @media (max-device-aspect-ratio: 3/4) {
+    .head-container{
+      height: calc(100vw * 1.333 - 9%);
+    }
+  }
+  @media (max-device-aspect-ratio: 2/3) {
+    .head-container{
+      height: calc(100vw * 1.5 - 9%);
+    }
+  }
+  @media (max-device-aspect-ratio: 10/16) {
+    .head-container{
+      height: calc(100vw * 1.6 - 9%);
+    }
+  }
+  @media (max-device-aspect-ratio: 9/16) {
+    .head-container{
+      height: calc(100vw * 2.5);
+    }
   }
