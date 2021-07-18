@@ -125,10 +125,12 @@ html, body{
     } */
     html {
       overflow: hidden;
+      height: 100%;
   }
   body {
       overflow-y: scroll;
       -webkit-overflow-scrolling:touch;
+      height: 100%;
   }
     
     /* #home_fix{
