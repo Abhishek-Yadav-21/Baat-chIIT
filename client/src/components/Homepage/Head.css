@@ -109,10 +109,14 @@ html, body{
   @media screen and (max-width: 423px) {
     
     .head-container {
-      background: url('./Assets/bg1.jpg') center center/cover no-repeat;
+      background: url('./Assets/bg1.jpg');
       background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
       transform: none !important;
-      background-attachment: fixed;
+      transition: height 999999s
+      /* background-attachment: fixed; */
     }
 
     /* #home_fix{
