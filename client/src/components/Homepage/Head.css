@@ -110,9 +110,9 @@ html, body{
     
     .head-container {
       background: url('./Assets/bg1.jpg') center center/cover no-repeat;
-      position: sticky;
       background-attachment: fixed;
       transform: none !important;
+      height: 110vh;
     }
     
     /* #home_fix{
