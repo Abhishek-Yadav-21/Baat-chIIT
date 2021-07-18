@@ -112,7 +112,7 @@ html, body{
       background: url('./Assets/bg1.jpg') center center/cover no-repeat;
       background-attachment: fixed;
       transform: none !important;
-      height: calc(100% -100px);
+      height: 1000px;
       /* height: 100vh; */
     }
     
