@@ -5,8 +5,8 @@ import Team1 from './Assets/Atul1.png';
 import Team2 from './Assets/Abhishek.png';
 import Team3 from './Assets/Akshat.png';
 import NavbarNew from '../Navbar/NavbarNew';
-import Mail from './Assets/Mail.png';
-import Li from './Assets/Li.png';
+import Github from './Assets/github.png';
+import Li from './Assets/linkedin.png';
 
 function About() {
     return (
@@ -25,7 +25,7 @@ function About() {
                         <p className='Apos'>IIT Roorkee</p>
                         <p className='Social'> 
                            <a href='https://www.linkedin.com/in/atul-singh-a034ab19b'><img id='Li' src={Li}/></a> 
-                           <a href='/'><img id='mail' src={Mail}/></a>
+                           <a href='https://github.com/AtulSingh717'><img id='Github' src={Github}/></a>
                         </p>
                    </div>
                    <div id='T2'>
@@ -35,7 +35,7 @@ function About() {
                         <p className='Apos'>IIT Roorkee</p>
                         <p className='Social'> 
                            <a href='/'><img id='Li' src={Li}/></a> 
-                           <a href='/'><img id='mail' src={Mail}/></a>
+                           <a href='/'><img id='Github' src={Github}/></a>
                         </p>
                    </div>
                    <div id='T3'>
@@ -45,7 +45,7 @@ function About() {
                         <p className='Apos'>IIT Roorkee</p>
                         <p className='Social'> 
                            <a href='/'><img id='Li' src={Li}/></a> 
-                           <a href='/'><img id='mail' src={Mail}/></a>
+                           <a href='/'><img id='Github' src={Github}/></a>
                         </p>
                    </div>                                              
             </div>

@@ -45,18 +45,18 @@ function Navbar(props) {
     <>
       <nav id={props.id} className={navbar ? 'navbar active':'navbar'}>
         <div className='navbar-container'>
-          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+          <a href='/' className='navbar-logo' onClick={closeMobileMenu}>
             <img alt="brand-logo" id="logo" src={Logo}/>
-          </Link>
+          </a>
           <div className='menu-icon' onClick={handleClick}>
             <img alt="bars" className="bars" src={Bars}/>
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           
           <div className='mobileHead nav-item'>
-          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+          <a href='/' className='navbar-logo' onClick={closeMobileMenu}>
           <img alt="logo" id="logo" src={Logo}/>
-          </Link>
+          </a>
           </div>
           <div className='menu-icon' onClick={closeMobileMenu}>
             <i className= 'fas fa-times'/>

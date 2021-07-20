@@ -5,14 +5,10 @@
 }
 
 #fh3{
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 3rem;
-    line-height: 4rem;
-    color: white;
     padding-top: 4rem;
     margin-bottom: 0;
+    height: 8.5rem;
+    width: 15rem;
 }
 
 p{
@@ -23,7 +19,13 @@ p{
     font-size: 1rem;
     line-height: 1.2rem;
     /* identical to box height */
-
-
     color: #3F3F3F;
+}
+
+
+@media screen and (max-width : 450px){
+    #fh3{
+        height: 7.5rem;
+        width: 9rem;
+      }
 }

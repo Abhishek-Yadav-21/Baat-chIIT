@@ -46,7 +46,6 @@ class NavChatNew extends React.Component {
         <nav className='navbar2'>
           <div className='navbar-container2'>
             <div className='navbar-logo2' onClick={this.closeMobileMenu}>
-                {/* <img id="logo2" src={Logo}/> */}
                 {this.state.mode ? <img alt="logo" id="logo2" src={LogoDark}/> : <img alt="logo" id="logo2" src={Logo}/>}
             </div>
             <div className='menu-icon2' onClick={this.handleClick}>
