@@ -7,7 +7,7 @@ import Bars from './Assets/bars.svg'
 import Logo from './Assets/Logo1.png';
 
 
-function Navbar() {
+function Navbar(props) {
 
   const [click, setClick] = useState(false);
   // eslint-disable-next-line
@@ -43,7 +43,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className={navbar ? 'navbar active':'navbar'}>
+      <nav id={props.id} className={navbar ? 'navbar active':'navbar'}>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             <img alt="brand-logo" id="logo" src={Logo}/>
@@ -63,9 +63,9 @@ function Navbar() {
           </div>
             
             <li id="about" className='nav-item'>
-              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+              <a href='/about' className='nav-links' onClick={closeMobileMenu}>
                 About
-              </Link>
+              </a>
             </li>
             <li className='nav-item'>
               <div

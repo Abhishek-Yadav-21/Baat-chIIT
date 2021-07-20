@@ -5,6 +5,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 
 import Home from './components/Homepage/Home';
 import Chat from './components/Chat/Chat';
+import About from './components/About/About';
 import axios from 'axios';
 
 // eslint-disable-next-line
@@ -36,6 +37,7 @@ class App  extends Component {
             <BrowserRouter>
                 <Route path="/" exact component={this.state.component}/>
                 <Route path = "/chat" exact component={this.state.component} />
+                <Route path = "/about" exact component={About} />
             </BrowserRouter>
         );
     }

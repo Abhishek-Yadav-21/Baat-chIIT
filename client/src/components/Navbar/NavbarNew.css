@@ -18,6 +18,10 @@
     box-shadow: 5px 0 10px  #474747;
     transition: all 0.4s ease;
   }
+
+  #navbar3{
+    background: black;
+  }
   
   .navbar-container {
     display: flex;
