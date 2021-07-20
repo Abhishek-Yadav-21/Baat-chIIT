@@ -6,12 +6,15 @@ import Footer from '../Footer/Footer';
 
 
 function Home() {
+  
   return (
     <div>   
-      <NavbarNew />
-      <Head /> 
-      <Content />
-      <Footer />
+      <div id="home_fix">
+        <NavbarNew />
+        <Head /> 
+        <Content />
+        <Footer />
+      </div>
     </div>
   );
 }

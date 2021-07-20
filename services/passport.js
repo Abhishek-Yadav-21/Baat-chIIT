@@ -5,7 +5,7 @@ const mongoose       = require('mongoose');
 
 const User = mongoose.model('users');
 
-var branch = ['bt.iitr.ac.in', 'ch.iitr.ac.in'];
+var branch = ['bt.iitr.ac.in'];
 var k =0;
 
 passport.serializeUser((user, done) => {
