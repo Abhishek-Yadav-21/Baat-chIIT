@@ -5,7 +5,7 @@
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
-    font-size: 7vw;
+    font-size: 6vw;
     line-height: 13rem;
     color: black;
     background: url('./Assets/ABOUT.png');
@@ -34,7 +34,7 @@
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
-    font-size: 5vw;
+    font-size: 4vw;
     line-height: 13rem;
     color: black;
     background: url('./Assets/The TEAM.png');
@@ -56,8 +56,8 @@
  }
 
 #imgA1,#imgA2,#imgA3{
-    height: 37rem;
-    width: 25rem;
+    height: 30rem;
+    width: 20rem;
     padding-top: 7rem;
   }
 
@@ -66,7 +66,7 @@
   font-family: Open Sans;
   font-style: normal;
   font-weight: 800;
-  font-size: 4rem;
+  font-size: 3rem;
   line-height: 5rem;
   text-align: center;
   color: #FFEC53;
@@ -77,7 +77,7 @@
   font-family: Open Sans;
   font-style: normal;
   font-weight: 800;
-  font-size: 4rem;
+  font-size: 3rem;
   line-height: 5rem;
   text-align: center;
   color: #7A51F0;
@@ -88,7 +88,7 @@
   font-family: Open Sans;
   font-style: normal;
   font-weight: 800;
-  font-size: 4rem;
+  font-size: 3rem;
   line-height: 5rem;
   text-align: center;
   color: #59EAEF;
