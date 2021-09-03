@@ -49,11 +49,11 @@
    flex-wrap: wrap;
  }
 
- #imgA1{
+ /* #imgA1{
     width:40rem;
     height: 37rem;
     padding-top: 7rem;
- }
+ } */
 
 #imgA1,#imgA2,#imgA3{
     height: 30rem;

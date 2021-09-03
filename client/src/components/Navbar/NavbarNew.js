@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import { Button } from './Button';
-import { Link } from 'react-router-dom';
 import './NavbarNew.css';
 import LoginPopup from '../Login-Popup/LoginPopup';
 import Bars from './Assets/bars.svg'
@@ -10,7 +8,6 @@ import Logo from './Assets/Logo1.png';
 function Navbar(props) {
 
   const [click, setClick] = useState(false);
-  // eslint-disable-next-line
   const [button, setButton] = useState(true);
   const [navbar, setNavbar] = useState(false);
 
@@ -45,22 +42,22 @@ function Navbar(props) {
     <>
       <nav id={props.id} className={navbar ? 'navbar active':'navbar'}>
         <div className='navbar-container'>
-          <a href='/' className='navbar-logo' onClick={closeMobileMenu}>
-            <img alt="brand-logo" id="logo" src={Logo}/>
-          </a>
-          <div className='menu-icon' onClick={handleClick}>
-            <img alt="bars" className="bars" src={Bars}/>
-          </div>
-          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          
-          <div className='mobileHead nav-item'>
-          <a href='/' className='navbar-logo' onClick={closeMobileMenu}>
-          <img alt="logo" id="logo" src={Logo}/>
-          </a>
-          </div>
-          <div className='menu-icon' onClick={closeMobileMenu}>
-            <i className= 'fas fa-times'/>
-          </div>
+            <a href='/' className='navbar-logo' onClick={closeMobileMenu}>
+              <img alt="brand-logo" id="logo" src={Logo}/>
+            </a>
+            <div className='menu-icon' onClick={handleClick}>
+              <img alt="bars" className="bars" src={Bars}/>
+            </div>
+            <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+            
+            <div className='mobileHead nav-item'>
+            <a href='/' className='navbar-logo' onClick={closeMobileMenu}>
+            <img alt="logo" id="logo" src={Logo}/>
+            </a>
+            </div>
+            <div className='menu-icon' onClick={closeMobileMenu}>
+              <i className= 'fas fa-times'/>
+            </div>
             
             <li id="about" className='nav-item'>
               <a href='/about' className='nav-links' onClick={closeMobileMenu}>
@@ -84,7 +81,6 @@ function Navbar(props) {
               </div>
             </li>
           </ul>
-          {/* {button && <Button buttonStyle='btn--outline'><LoginPopup id="logIn" text="No Account?" link="Sign Up" name="Log In" /></Button>} */}
         </div>
       </nav>
     </>
